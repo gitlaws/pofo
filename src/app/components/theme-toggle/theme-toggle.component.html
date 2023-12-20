@@ -1,6 +1,6 @@
 <section class="parent">
   <div class="child">
-    <h1>Light | <span class="highlight">Dark</span></h1>
+    <h1>Light<span class="highlight"> Dark</span></h1>
     <!-- theme-toggle.button -->
     <div
       class="btn"
@@ -11,7 +11,11 @@
         class="btn__indicator"
         [ngStyle]="{ transform: darkMode ? 'translateX(5em)' : 'none' }"
       >
-        <button class="btn__icon-container" (click)="toggleAnimation()">
+        <button
+          class="btn__icon-container"
+          (click)="toggleAnimation()"
+          [ngClass]="{ 'darkmode-bg': darkMode }"
+        >
           <i
             [ngClass]="
               darkMode ? 'fas fa-moon btn__icon' : 'fas fa-sun btn__icon'

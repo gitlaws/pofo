@@ -75,17 +75,12 @@
   }
 }
 
-@mixin btn-icon {
-  @keyframes rotate {
-    from {
-      transform: rotate(0deg);
-    }
+@mixin spin-animation {
+  animation: spin 0.5s;
+
+  @keyframes spin {
     to {
       transform: rotate(360deg);
     }
-  }
-
-  .animated {
-    animation: rotate 2s linear infinite;
   }
 }

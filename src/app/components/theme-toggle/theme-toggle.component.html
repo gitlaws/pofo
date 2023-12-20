@@ -1,24 +1,24 @@
 <section class="parent">
   <div class="child">
     <h1>Light | <span class="highlight">Dark</span></h1>
-    <!-- theme-toggle.buutton -->
+    <!-- theme-toggle.button -->
     <div
       class="btn"
-      (click)="toggleDarkMode()"
+      (click)="toggleDarkMode(); toggleAnimation()"
       [ngClass]="{ darkmode: darkMode }"
     >
       <div
         class="btn__indicator"
         [ngStyle]="{ transform: darkMode ? 'translateX(5em)' : 'none' }"
       >
-        <div class="btn__icon-container">
+        <button class="btn__icon-container" (click)="toggleAnimation()">
           <i
-            class="btn__icon"
             [ngClass]="
-              darkMode ? 'fa-solid fa-moon animated' : 'fa-solid fa-sun'
+              darkMode ? 'fas fa-moon btn__icon' : 'fas fa-sun btn__icon'
             "
+            [class.animated]="isAnimated"
           ></i>
-        </div>
+        </button>
       </div>
     </div>
   </div>

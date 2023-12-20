@@ -57,9 +57,13 @@ h1 {
 }
 
 .btn__icon {
+  font-size: 2rem; // Set the size here
   color: $btn-icon;
-  font-size: 3rem;
-  @include btn-icon;
+  transition: color 0.3s ease; 
+}
+
+.btn__icon.animated {
+  @include spin-animation;
 }
 
 .darkmode .btn {
@@ -73,5 +77,5 @@ h1 {
 }
 
 .darkmode .btn__icon {
-  color: white;
+  color: red;
 }

@@ -21,4 +21,13 @@ export class ThemeToggleComponent implements OnInit {
     const theme = this.darkMode ? 'dark' : 'light';
     this.themeService.setTheme(theme);
   }
+
+  isAnimated = false;
+
+  toggleAnimation() {
+    this.isAnimated = true;
+    setTimeout(() => {
+      this.isAnimated = false;
+    }, 1000); // replace 1000 with the duration of your spin animation in milliseconds
+  }
 }

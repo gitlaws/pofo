@@ -1,14 +1,23 @@
-<!-- theme-toggle.component.html -->
-<div class="btn" (click)="toggleDarkMode()" [ngClass]="{ darkmode: darkMode }">
-  <div
-    class="btn__indicator"
-    [ngStyle]="{ transform: darkMode ? 'translateX(5em)' : 'none' }"
-  >
-    <div class="btn__icon-container">
-      <i
-        class="btn__icon fa-solid fa-sun"
-        [ngClass]="{ animated: darkMode }"
-      ></i>
+<section class="parent">
+  <div class="child">
+    <h1>Light | <span class="highlight">Dark</span></h1>
+    <!-- theme-toggle.component.html -->
+    <div
+      class="btn"
+      (click)="toggleDarkMode()"
+      [ngClass]="{ darkmode: darkMode }"
+    >
+      <div
+        class="btn__indicator"
+        [ngStyle]="{ transform: darkMode ? 'translateX(5em)' : 'none' }"
+      >
+        <div class="btn__icon-container">
+          <i
+            class="btn__icon fa-solid fa-sun"
+            [ngClass]="{ animated: darkMode }"
+          ></i>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>

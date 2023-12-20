@@ -1,3 +1,7 @@
+@import "src/styles/_colors";
+@import "src/styles/_mixins";
+@import "src/styles/_variables";
+
 .parent {
   height: 200px;
   display: flex;
@@ -10,6 +14,9 @@
 h1 {
   text-align: center;
   padding-bottom: 24px;
+}
+.highlight {
+  color: $main-grey;
 }
 
 .btn {
@@ -24,4 +31,27 @@ h1 {
   align-items: center;
   cursor: pointer;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+}
+
+.btn__indicator {
+  background-color: #fff;
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.btn__icon-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn__icon {
+  color: gold;
+  font-size: 3rem;
 }

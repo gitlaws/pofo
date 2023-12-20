@@ -1,2 +1,14 @@
 <!-- theme-toggle.component.html -->
-<button (click)="toggleTheme()">Toggle Theme</button>
+<div class="btn" (click)="toggleDarkMode()" [ngClass]="{ darkmode: darkMode }">
+  <div
+    class="btn__indicator"
+    [ngStyle]="{ transform: darkMode ? 'translateX(5em)' : 'none' }"
+  >
+    <div class="btn__icon-container">
+      <i
+        class="btn__icon fa-solid fa-sun"
+        [ngClass]="{ animated: darkMode }"
+      ></i>
+    </div>
+  </div>
+</div>

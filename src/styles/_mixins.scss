@@ -75,14 +75,17 @@
   }
 }
 
-@mixin spinAnimation($duration: 0.5s) {
-  @keyframes spin {
+@mixin rotate {
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
     to {
       transform: rotate(360deg);
     }
   }
 
-  &.animated {
-    animation: spin $duration;
+  .rotate {
+    animation: rotate 2s linear infinite;
   }
 }

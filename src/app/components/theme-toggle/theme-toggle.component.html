@@ -12,6 +12,7 @@
         [ngStyle]="{ transform: darkMode ? 'translateX(5em)' : 'none' }"
       >
         <button
+          title="Toggle Dark Mode"
           class="btn__icon-container"
           (click)="toggleAnimation()"
           [ngClass]="{ 'darkmode-bg': darkMode }"

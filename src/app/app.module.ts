@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ThemeToggleComponent } from './theme-toggle/theme-toggle.component';
-
+import { ThemeService } from './services/theme.service';
+import { ThemeToggleComponent } from './components/theme-toggle/theme-toggle.component';
 @NgModule({
   declarations: [
     AppComponent,

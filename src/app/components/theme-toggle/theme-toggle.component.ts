@@ -1,7 +1,6 @@
 // theme-toggle.component.ts
 import { Component, OnInit } from '@angular/core';
-import { ThemeService } from '../services/theme.service';
-
+import { ThemeService } from 'src/app/services/theme.service';
 @Component({
   selector: 'app-theme-toggle',
   templateUrl: './theme-toggle.component.html',

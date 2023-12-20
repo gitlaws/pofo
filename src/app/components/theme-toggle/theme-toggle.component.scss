@@ -14,8 +14,7 @@
 h1 {
   text-align: center;
   padding-bottom: 24px;
-  color: #FAF8FF;
-
+  color: #faf8ff;
 }
 .highlight {
   color: $temp-light;
@@ -60,7 +59,7 @@ h1 {
 .btn__icon {
   color: $btn-icon;
   font-size: 3rem;
-  @include rotate;
+  @include btn-icon;
 }
 
 .darkmode .btn {

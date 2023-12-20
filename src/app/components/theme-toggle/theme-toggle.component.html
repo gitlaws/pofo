@@ -13,8 +13,10 @@
       >
         <div class="btn__icon-container">
           <i
-            class="btn__icon fa-solid fa-sun"
-            [ngClass]="{ animated: darkMode }"
+            class="btn__icon"
+            [ngClass]="
+              darkMode ? 'fa-solid fa-moon animated' : 'fa-solid fa-sun'
+            "
           ></i>
         </div>
       </div>

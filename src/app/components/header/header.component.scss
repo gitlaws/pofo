@@ -13,8 +13,10 @@
   align-self: center;
   // padding: 0.3rem 2rem;
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.6);
+  // background-color: rgba(0, 0, 0, 0.6);
+  background-color: $nav-light;
   backdrop-filter: blur(5px);
+  
 }
 
 .navbar-logo {

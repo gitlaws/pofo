@@ -15,7 +15,7 @@
   display: flex;
   align-items: center;
   align-self: center;
-  gap: 2rem;
+  // gap: 2rem;
 }
 
 h1 {
@@ -36,8 +36,8 @@ h1 {
 
 .btn {
   background-color: rgba(101, 117, 133, 0.16);
-  width: 10em;
-  height: 5em;
+  width: 4em;
+  height: 2em;
   border-radius: 10em;
   border: 1px solid $btn-border;
   padding: 0 0.5em;
@@ -50,8 +50,8 @@ h1 {
 
 .btn__indicator {
   //   background-color: #fff;
-  width: 4em;
-  height: 4em;
+  width: 1.5em;
+  height: 1.5em;
   border-radius: 50%;
   position: absolute;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
@@ -70,7 +70,7 @@ h1 {
 }
 
 .btn__icon {
-  font-size: 2rem; // Set the size here
+  font-size: 1rem; // Set the size here
   color: $btn-icon;
   transition: color 0.3s ease;
 }

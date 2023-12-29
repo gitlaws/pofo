@@ -9,6 +9,7 @@ import { ThemeService } from 'src/app/services/theme.service';
 })
 export class ThemeToggleComponent implements OnInit {
   darkMode: boolean = false;
+  isAnimated = false;
 
   constructor(private themeService: ThemeService) {}
 
@@ -22,12 +23,16 @@ export class ThemeToggleComponent implements OnInit {
     this.themeService.setTheme(theme);
   }
 
-  isAnimated = false;
-
   toggleAnimation() {
     this.isAnimated = true;
     setTimeout(() => {
       this.isAnimated = false;
     }, 1000); // replace 1000 with the duration of your spin animation in milliseconds
+  }
+
+  toggleTheme(): void {
+    const nextTheme =
+      this.themeService.getTheme() === 'light' ? 'dark' : 'light';
+    this.themeService.setTheme(nextTheme);
   }
 }

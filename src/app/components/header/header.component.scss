@@ -18,10 +18,18 @@
   backdrop-filter: blur(5px);
 }
 
+.light {
+  background-color: #f8f9fa;
+  // other styles for light theme
+}
 
+.dark {
+  background-color: #343a40;
+  // other styles for dark theme
+}
 
 .navbar-logo {
-  visibility: hidden;
+  visibility: visible;
   align-items: center;
   align-self: center;
   text-decoration: none;

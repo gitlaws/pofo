@@ -14,17 +14,17 @@
   // padding: 0.3rem 2rem;
   z-index: 1;
   // background-color: rgba(0, 0, 0, 0.6);
-  background-color: $navbar-container-bg;
+  // background-color: $navbar-container-bg;
   backdrop-filter: blur(5px);
 }
 
 .light {
-  background-color: #f8f9fa;
+  background-color: $nav-light;
   // other styles for light theme
 }
 
 .dark {
-  background-color: #343a40;
+  background-color:  $nav-dark;
   // other styles for dark theme
 }
 

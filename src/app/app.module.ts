@@ -7,12 +7,14 @@ import { ThemeService } from './services/theme.service';
 import { ThemeToggleComponent } from './components/theme-toggle/theme-toggle.component';
 import { ComponentDocumentationComponent } from './components/component-documentation/component-documentation.component';
 import { HeaderComponent } from './components/header/header.component';
+import { GridPanelComponent } from './components/grid-panel/grid-panel.component';
 @NgModule({
   declarations: [
     AppComponent,
     ThemeToggleComponent,
     ComponentDocumentationComponent,
-    HeaderComponent
+    HeaderComponent,
+    GridPanelComponent
   ],
   imports: [
     BrowserModule,

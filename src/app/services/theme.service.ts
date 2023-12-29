@@ -10,18 +10,6 @@ export class ThemeService {
   private themeSubject = new BehaviorSubject('light');
   currentTheme = this.themeSubject.asObservable();
 
-  // new setters & getters
-  // getTheme(): string | null {
-  //   return localStorage.getItem('theme');
-  // }
-
-  // setTheme(theme: string): void {
-  //   localStorage.setItem('theme', theme);
-  //   this.themeSubject.next(theme);
-  // }
-
-  // old setters & getters
-
   getTheme(): string | null {
     return localStorage.getItem(this.THEME_KEY);
   }
@@ -29,6 +17,6 @@ export class ThemeService {
   setTheme(theme: string): void {
     localStorage.setItem(this.THEME_KEY, theme);
     document.documentElement.setAttribute('data-theme', theme);
-     this.themeSubject.next(theme);
+    this.themeSubject.next(theme);
   }
 }

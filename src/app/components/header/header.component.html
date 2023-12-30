@@ -1,6 +1,7 @@
 <nav class="navbar-container" [ngClass]="currentTheme">
   <a href="#" class="navbar-logo">Ś</a>
 
+  <ng-content select="app-theme-toggle"></ng-content>
   <div class="icon">
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -15,9 +16,6 @@
       <circle cx="5" cy="12" r="2"></circle>
     </svg>
   </div>
-
-  <ng-content select="app-theme-toggle"></ng-content>
-
   <ul class="navbar-menu">
     <li>
       <a href=""><i class="fab fa-youtube"></i></a>

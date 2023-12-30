@@ -6,8 +6,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   // grid-gap: 20px;
-  border-radius: 4px;
-  border: 30px solid $grid-panel-border;
+  // border-radius: 4px;
+  // border: 30px solid $grid-panel-border;
   // transition: all 0.3s linear;
   // background-color: $main-grey;
 }
@@ -24,7 +24,6 @@
   border-radius: 1rem;
   margin: 80px;
   // text-align: center;
-  background-color: $grid-panel-box;
   &:hover {
     -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px,
       inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
@@ -52,11 +51,17 @@
 }
 
 .light {
-  background-color: $nav-light;
+  // background-color: $nav-light;
   // other styles for light theme
+  .grid-wrapper {
+    border: 30px solid $grid-panel-border-light;
+  }
 }
 
 .dark {
-  background-color: $nav-dark;
+  // background-color: $nav-dark;
   // other styles for dark theme
+  .grid-wrapper {
+    border: 30px solid $grid-panel-border-dark;
+  }
 }

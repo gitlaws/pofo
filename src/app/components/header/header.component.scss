@@ -13,8 +13,6 @@
   align-self: center;
   // padding: 0.3rem 2rem;
   z-index: 1;
-  // background-color: rgba(0, 0, 0, 0.6);
-  // background-color: $navbar-container-bg;
   backdrop-filter: blur(5px);
 }
 
@@ -24,7 +22,7 @@
 }
 
 .dark {
-  background-color:  $nav-dark;
+  background-color: $nav-dark;
   // other styles for dark theme
 }
 
@@ -77,34 +75,34 @@ i:hover {
 
 /* Responsive Layouts */
 
-// @media (max-width: $mobile) {
-//   .navbar-container ul {
-//     visibility: visible;
-//   }
+@media (max-width: $mobile) {
+  .navbar-container ul {
+    visibility: visible;
+  }
 
-//   a .navbar-logo {
-//     text-decoration: none;
-//     display: flex;
-//     align-self: flex-start;
-//   }
+  a .navbar-logo {
+    text-decoration: none;
+    display: flex;
+    align-self: flex-start;
+  }
 
-//   .icon {
-//     visibility: hidden;
-//   }
-// }
+  .icon {
+    visibility: hidden;
+  }
+}
 
-// @media (max-width: $tablet) {
-//   .navbar-container ul {
-//     visibility: visible;
-//   }
+@media (max-width: $tablet) {
+  .navbar-container ul {
+    visibility: visible;
+  }
 
-//   a .navbar-logo {
-//     text-decoration: none;
-//     display: flex;
-//     align-self: flex-start;
-//   }
+  a .navbar-logo {
+    text-decoration: none;
+    display: flex;
+    align-self: flex-start;
+  }
 
-//   .icon {
-//     visibility: hidden;
-//   }
-// }
+  .icon {
+    visibility: hidden;
+  }
+}

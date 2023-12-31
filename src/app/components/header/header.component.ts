@@ -7,6 +7,8 @@ import { ThemeService } from 'src/app/services/theme.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  showDropdown = false;
+
   currentTheme: string = '';
 
   constructor(private themeService: ThemeService) {

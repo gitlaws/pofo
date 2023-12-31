@@ -22,7 +22,14 @@
     </svg>
 
     <!-- Hover over Drop Down Menu -->
-    <div class="dropdown-content" *ngIf="showDropdown">
+    <div
+      class="dropdown-content"
+      *ngIf="showDropdown"
+      [ngClass]="{
+        'theme-dark': currentTheme === 'dark',
+        'theme-light': currentTheme === 'light'
+      }"
+    >
       <a href="#">Link 1</a>
       <a href="#">Link 2</a>
       <app-theme-toggle></app-theme-toggle>

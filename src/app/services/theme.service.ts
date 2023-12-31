@@ -8,7 +8,11 @@ import { BehaviorSubject } from 'rxjs';
 export class ThemeService {
   private readonly THEME_KEY = 'appTheme';
   private themeSubject = new BehaviorSubject('light');
-  currentTheme = this.themeSubject.asObservable();
+  currentTheme = this.themeSubject.asObservable() as BehaviorSubject<string>;
+
+  changeTheme(theme: string) {
+    this.currentTheme.next(theme);
+  }
 
   getTheme(): string | null {
     return localStorage.getItem(this.THEME_KEY);

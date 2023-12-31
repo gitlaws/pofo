@@ -30,9 +30,10 @@ export class ThemeToggleComponent implements OnInit {
     }, 1000); // replace 1000 with the duration of your spin animation in milliseconds
   }
 
-  toggleTheme(): void {
-    const nextTheme =
-      this.themeService.getTheme() === 'light' ? 'dark' : 'light';
-    this.themeService.setTheme(nextTheme);
+  toggleTheme() {
+    this.themeService.currentTheme.subscribe((theme) => {
+      const nextTheme = theme === 'light' ? 'dark' : 'light';
+      this.themeService.changeTheme(nextTheme);
+    });
   }
 }

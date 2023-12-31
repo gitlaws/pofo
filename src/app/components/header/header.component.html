@@ -8,7 +8,7 @@
     (mouseover)="showDropdown = true"
     (mouseleave)="showDropdown = false"
   >
-    <!-- Your SVG icon here -->
+    <!-- SVG icon here -->
     <svg
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
@@ -21,13 +21,13 @@
       <circle cx="5" cy="12" r="2"></circle>
     </svg>
 
-    
+    <!-- Hover over Drop Down Menu -->
     <div class="dropdown-content" *ngIf="showDropdown">
       <a href="#">Link 1</a>
       <a href="#">Link 2</a>
       <app-theme-toggle></app-theme-toggle>
     </div>
-
+    <!-- Social Links -->
     <ul class="navbar-menu">
       <li>
         <a href=""><i class="fab fa-youtube"></i></a>

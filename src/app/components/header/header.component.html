@@ -27,8 +27,6 @@
     <div
       class="dropdown-content"
       *ngIf="showDropdown"
-      (mouseenter)="toggleDropdown()"
-      (mouseleave)="hideDropdown()"
       [ngClass]="{
         'theme-dark': currentTheme === 'dark',
         'theme-light': currentTheme === 'light'

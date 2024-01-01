@@ -97,6 +97,14 @@ i {
   background-color: #ddd;
 }
 
+.theme-dark .dropdown-content {
+  background-color: red; // Replace with the actual color for dark theme
+}
+
+.theme-light .dropdown-content {
+  background-color: blue; // Replace with the actual color for light theme
+}
+
 .icon:hover .dropdown-content {
   display: block;
 }

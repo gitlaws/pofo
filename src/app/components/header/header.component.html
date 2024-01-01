@@ -9,6 +9,7 @@
     (mouseleave)="showDropdown = false"
   >
     <!-- SVG icon here -->
+
     <svg
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
@@ -22,9 +23,12 @@
     </svg>
 
     <!-- Hover over Drop Down Menu -->
+
     <div
       class="dropdown-content"
       *ngIf="showDropdown"
+      (mouseenter)="toggleDropdown()"
+      (mouseleave)="hideDropdown()"
       [ngClass]="{
         'theme-dark': currentTheme === 'dark',
         'theme-light': currentTheme === 'light'

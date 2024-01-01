@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
   hideDropdown() {
     this.hideDropdownTimeout = setTimeout(() => {
       this.showDropdown = false;
-    }, 8000); // 2000 milliseconds = 2 seconds
+    }, 8000); // 8000 milliseconds = 8 seconds
   }
 
   constructor(private themeService: ThemeService) {

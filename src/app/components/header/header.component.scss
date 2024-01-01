@@ -9,7 +9,7 @@
   // right: 0;
   display: flex;
   // flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   align-self: center;
   // padding: 0.3rem 2rem;
@@ -39,9 +39,12 @@
 }
 
 .navbar-menu {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
+  visibility: visible;
   justify-content: space-evenly;
-  align-self: center;
   align-items: center;
   gap: 1rem;
 }
@@ -74,7 +77,7 @@ i {
   display: none;
   position: absolute;
   right: 100%; // This will position the dropdown to the left of the parent element
-  top: 20px;
+  top: 10px;
   border: 1px solid $btn-hover;
   border-radius: 5px;
   background-color: $alt-dark-color;
@@ -112,7 +115,6 @@ i {
 
 @media (max-width: $mobile) {
   .navbar-menu {
-    display: block;
     visibility: hidden;
   }
 
@@ -132,7 +134,6 @@ i {
 
 @media (max-width: $tablet) {
   .navbar-menu {
-    display: block;
     visibility: hidden;
   }
 

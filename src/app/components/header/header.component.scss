@@ -169,7 +169,7 @@
     // width: 100%;
   }
 
-  .navbar-icon {
+  .icon {
     display: none;
     display: flex;
     align-self: center;
@@ -221,7 +221,7 @@
     // }
   }
 
-  .navbar-menu {
+  .menu {
     display: flex;
     justify-content: space-around;
     // width: 100%;
@@ -257,11 +257,11 @@
       display: none;
     }
 
-    .navbar-icon {
+    .icon {
       display: block;
     }
 
-    .navbar-menu ul {
+    .menu ul {
       flex-direction: row;
       align-items: center;
       display: none;

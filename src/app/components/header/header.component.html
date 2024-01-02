@@ -1,17 +1,21 @@
-<div class="navbar-container" [ngClass]="currentTheme">
-  <a href="#" class="navbar-logo">Ś</a>
-
-  <ng-content
-    select="app-theme-toggle"
-    class="navbar-theme-toggle"
-  ></ng-content>
+<header class="navbar-container" [ngClass]="currentTheme">
+  <!-- Logo -->
+  <a href="javascript:void(0)" class="navbar-logo">Ś</a>
+  <!-- Theme Toggle -->
+  <nav>
+    <ng-content
+      class="navbar-theme-toggle"
+      select="app-theme-toggle"
+      aria-haspopup="true"
+      aria-expanded="false"
+    ></ng-content>
+  </nav>
+  <!-- Icon SVG -->
   <div
     class="icon"
     (mouseover)="showDropdown = true"
     (mouseleave)="showDropdown = false"
   >
-    <!-- SVG icon here -->
-
     <svg
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
@@ -23,9 +27,7 @@
       <circle cx="19" cy="12" r="2"></circle>
       <circle cx="5" cy="12" r="2"></circle>
     </svg>
-
-    <!-- Hover over Drop Down Menu -->
-
+    <!-- Drop Down Menu -->
     <div
       class="dropdown-content"
       *ngIf="showDropdown"
@@ -34,24 +36,24 @@
         'theme-light': currentTheme === 'light'
       }"
     >
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
+      <a href="javascript:void(0)">Link 1</a>
+      <a href="javascript:void(0)">Link 2</a>
       <app-theme-toggle class="dropdown-theme-toggle"></app-theme-toggle>
     </div>
-    <!-- Social Links -->
+    <!-- Social Links UL -->
     <ul class="navbar-menu">
       <li>
-        <a href=""><i class="fab fa-youtube"></i></a>
+        <a href=""><i class="fab fa-youtube" aria-hidden="true"></i></a>
       </li>
       <li>
-        <a href=""><i class="fab fa-linkedin"></i></a>
+        <a href=""><i class="fab fa-linkedin" aria-hidden="true"></i></a>
       </li>
       <li>
-        <a href=""><i class="fab fa-discord"></i></a>
+        <a href=""><i class="fab fa-discord" aria-hidden="true"></i></a>
       </li>
       <li>
-        <a href=""><i class="fab fa-github"></i></a>
+        <a href=""><i class="fab fa-github" aria-hidden="true"></i></a>
       </li>
     </ul>
   </div>
-</div>
+</header>

@@ -1,8 +1,10 @@
 <div class="navbar-container" [ngClass]="currentTheme">
   <a href="#" class="navbar-logo">Ś</a>
 
-  <ng-content select="app-theme-toggle"></ng-content>
-
+  <ng-content
+    select="app-theme-toggle"
+    class="navbar-theme-toggle"
+  ></ng-content>
   <div
     class="icon"
     (mouseover)="showDropdown = true"
@@ -34,7 +36,7 @@
     >
       <a href="#">Link 1</a>
       <a href="#">Link 2</a>
-      <app-theme-toggle></app-theme-toggle>
+      <app-theme-toggle class="dropdown-theme-toggle"></app-theme-toggle>
     </div>
     <!-- Social Links -->
     <ul class="navbar-menu">

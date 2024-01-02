@@ -111,6 +111,11 @@ i {
 .icon:hover .dropdown-content {
   display: block;
 }
+
+.dropdown-theme-toggle {
+  display: none;
+}
+
 /* Responsive Layouts */
 
 @media (max-width: $mobile) {
@@ -130,6 +135,14 @@ i {
   // .dropdown-content {
   //   // Add any additional styles for mobile and tablet viewports here
   // }
+
+  .navbar-theme-toggle {
+    display: none;
+  }
+
+  .dropdown-theme-toggle {
+    display: block;
+  }
 }
 
 @media (max-width: $tablet) {
@@ -149,4 +162,12 @@ i {
   // .dropdown-content {
   //   // Add any additional styles for mobile and tablet viewports here
   // }
+
+  .navbar-theme-toggle {
+    display: none;
+  }
+
+  .dropdown-theme-toggle {
+    display: block;
+  }
 }

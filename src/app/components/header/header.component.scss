@@ -222,9 +222,18 @@
   @media (max-width: $mobile) {
     flex-direction: row;
 
+    nav {
+      display: none;
+    }
+
+    .icon {
+      display: visible;
+    }
+
     .menu ul {
       flex-direction: row;
       align-items: center;
+      display: none;
 
       li {
         margin: 1rem 0;

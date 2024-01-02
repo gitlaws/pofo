@@ -31,6 +31,8 @@ export class ThemeToggleComponent implements OnInit {
   }
 
   toggleTheme() {
+    this.toggleDarkMode();
+    this.toggleAnimation();
     this.themeService.currentTheme.subscribe((theme) => {
       const nextTheme = theme === 'light' ? 'dark' : 'light';
       this.themeService.changeTheme(nextTheme);

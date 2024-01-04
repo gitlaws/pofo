@@ -2,65 +2,69 @@
 @import "src/styles/_mixins";
 @import "src/styles/_variables";
 
-.parent {
+.parent,
+.child {
   display: flex;
-  justify-content: space-around;
-  align-self: center;
   align-items: center;
-  padding: 20px 20px;
-
-  .child {
-    display: flex;
-    align-items: center;
-    align-self: center;
-    gap: 2rem;
-  }
+  justify-content: space-around;
+  height: 200px;
+  padding: 20px;
 }
 
-h1 {
+h1,
+.highlight {
   text-align: center;
   color: #faf8ff;
 }
 
+.highlight {
+  color: $temp-light;
+}
+
 .btn {
-  width: 3em;
-  height: 1.5em;
+  background-color: rgba(101, 117, 133, 0.16);
+  width: 4em;
+  height: 2em;
+  border: 1px solid $btn-border;
+  border-radius: 10em;
+  padding: 0 0.5em;
   position: relative;
-  border-radius: 50%;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
-  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    border-color: $btn-hover;
+  }
 }
 
 .btn__indicator {
-  width: 50%;
-  height: 100%;
-  background-color: #faf7ff;
+  width: 1.5em;
+  height: 1.5em;
   border-radius: 50%;
   position: absolute;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
 }
 
 .btn__icon-container {
+  background-color: #faf7ff;
+  border: 1px solid black;
   width: 100%;
   height: 100%;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color 0.3s ease;
 }
 
 .btn__icon {
   font-size: 1rem;
   color: $btn-icon;
   transition: color 0.3s ease;
-}
 
-.darkmode-bg {
-  background-color: #272533;
-}
-
-.darkmode .btn {
-  box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.3),
-    inset 8px 0 8px rgba(0, 0, 0, 0.3), inset 0 -4px 4px rgba(0, 0, 0, 0.3);
+  &.animated {
+    @include spin-animation;
+  }
 }

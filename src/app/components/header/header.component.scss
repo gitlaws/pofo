@@ -200,12 +200,26 @@
   @media (max-width: $mobile) {
     flex-direction: row;
 
+    .navbar-container {
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      align-self: center;
+      width: 100%;
+    }
+
+    .navbar-logo {
+      // font-size: 48px;
+    }
+
     nav {
       display: none;
     }
 
     .icon {
       display: block;
+      // margin-left: auto;
+      // margin-right: 3em;
     }
 
     .menu ul {

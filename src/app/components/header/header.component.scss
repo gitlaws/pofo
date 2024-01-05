@@ -43,7 +43,8 @@
     .dropdown-content {
       position: absolute;
       top: 100%;
-      left: 0;
+      // left: 0;
+      right: 0;
       display: none;
       flex-direction: column;
       gap: 10px;
@@ -85,21 +86,58 @@
   }
 
   // Social Links
-  .menu {
-    display: flex;
-    justify-content: space-around;
-    // width: 100%;
-    align-items: center;
+  // .menu {
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   // width: 100%;
 
+  //   ul {
+  //     display: flex;
+  //     justify-content: space-evenly;
+  //     width: 100%;
+  //     list-style: none;
+  //     padding: 0;
+
+  //     li {
+  //       margin: 0;
+  //     }
+  //   }
+  // }
+
+  .menu {
     ul {
       display: flex;
-      justify-content: space-evenly;
-      width: 100%;
+      justify-content: center;
+      align-items: center;
       list-style: none;
       padding: 0;
+      gap: 20px; // creates space between list items
 
       li {
         margin: 0;
+        a {
+          display: flex;
+          justify-content: center;
+          align-self: center;
+          align-items: center;
+          text-decoration: none;
+          // width: 50px;
+          // height: 50px;
+          // border-radius: 50%; // makes the link circular
+          // background-color: #f5f5f5; // light grey background
+          color: #333; // dark grey icon
+          transition: background-color 0.3s ease, color 0.3s ease;
+
+          &:hover {
+            // background-color: #007bff; // blue background on hover
+            color: #fff; // white icon on hover
+          }
+
+          i {
+            font-size: 20px;
+          }
+        }
       }
     }
   }

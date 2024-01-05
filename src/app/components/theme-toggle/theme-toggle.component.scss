@@ -2,69 +2,67 @@
 @import "src/styles/_mixins";
 @import "src/styles/_variables";
 
+$box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+$border-radius: 50%;
+
 .parent,
 .child {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  gap: 20px;
   height: 200px;
   padding: 20px;
 }
 
-h1,
 .highlight {
   text-align: center;
-  color: #faf8ff;
-}
-
-.highlight {
   color: $temp-light;
 }
 
 .btn {
-  background-color: rgba(101, 117, 133, 0.16);
-  width: 4em;
-  height: 2em;
-  border: 1px solid $btn-border;
-  border-radius: 10em;
-  padding: 0 0.5em;
-  position: relative;
   display: flex;
   align-items: center;
+  width: 4em;
+  height: 2em;
+  padding: 0 0.5em;
+  position: relative;
   cursor: pointer;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid $btn-border;
+  border-radius: 10em;
+  background-color: rgba(101, 117, 133, 0.16);
+  box-shadow: $box-shadow;
 
   &:hover {
     border-color: $btn-hover;
   }
-}
 
-.btn__indicator {
-  width: 1.5em;
-  height: 1.5em;
-  border-radius: 50%;
-  position: absolute;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-}
+  &__indicator {
+    width: 1.5em;
+    height: 1.5em;
+    position: absolute;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    transition: transform 0.3s ease;
+  }
 
-.btn__icon-container {
-  background-color: #faf7ff;
-  border: 1px solid black;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  &__icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: $border-radius;
+    background-color: #faf7ff;
+  }
 
-.btn__icon {
-  font-size: 1rem;
-  color: $btn-icon;
-  transition: color 0.3s ease;
+  &__icon {
+    font-size: 1rem;
+    color: $btn-icon;
+    transition: color 0.3s ease;
 
-  &.animated {
-    @include spin-animation;
+    &.animated {
+      @include spin-animation;
+    }
   }
 }

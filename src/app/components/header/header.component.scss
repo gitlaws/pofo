@@ -15,7 +15,7 @@
     font-size: 78px;
     @include linear-gradient-logo;
   }
-
+  // Theme Toggle
   nav {
     display: flex;
     justify-content: space-between;
@@ -24,6 +24,7 @@
     // width: 100%;
   }
 
+  // 3 Dots
   .icon {
     display: none;
     display: flex;
@@ -37,7 +38,7 @@
     pointer-events: auto;
   }
 
-  // Dropdown Content
+  // Dropdown Menu
 
   .menu {
     display: flex;

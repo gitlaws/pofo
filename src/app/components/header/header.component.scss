@@ -120,11 +120,19 @@
       }
 
       &.theme-dark a i {
-        color: #fff; // Change as needed for dark theme
+        color: #aaa; // Change as needed for dark theme
+
+        &:hover {
+          color: #fff; // Change as needed for dark theme hover
+        }
       }
 
       &.theme-light a i {
-        color: #333; // Change as needed for light theme
+        color: #777; // Change as needed for light theme
+
+        &:hover {
+          color: #333; // Change as needed for light theme hover
+        }
       }
     }
 

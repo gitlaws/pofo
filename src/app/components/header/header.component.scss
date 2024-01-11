@@ -115,6 +115,14 @@
           }
         }
       }
+
+      &.theme-dark a i {
+        color: #fff; // Change as needed for dark theme
+      }
+
+      &.theme-light a i {
+        color: #333; // Change as needed for light theme
+      }
     }
 
     &:hover {

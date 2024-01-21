@@ -35,7 +35,7 @@
 
     svg {
       fill: currentColor;
-      width: 20px;
+      max-width: 24px;
       height: 20px;
     }
 
@@ -208,14 +208,18 @@
       width: 100%;
     }
 
+    .navbar-logo {
+      margin-left: 1em;
+    }
+
     nav {
       display: none;
     }
 
     .icon {
       // display: block;
-      // margin-left: auto;
-      // margin-right: 3em;
+      margin-left: auto;
+      margin-right: 3em;
     }
 
     .menu ul {

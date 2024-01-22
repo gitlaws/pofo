@@ -12,14 +12,14 @@ export class HeaderComponent implements OnInit {
   hideDropdownTimeout: any;
 
   toggleDropdown() {
-    clearTimeout(this.hideDropdownTimeout);
+    clearTimeout(this.hideDropdownTimeout); // clear the timeout
     this.showDropdown = true;
   }
 
   hideDropdown() {
     this.hideDropdownTimeout = setTimeout(() => {
       this.showDropdown = false;
-    }, 8000); // 8000 milliseconds = 8 seconds
+    }, 3000); // 3000 milliseconds = 3 seconds
   }
 
   constructor(private themeService: ThemeService) {

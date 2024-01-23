@@ -11,6 +11,12 @@ export class HeaderComponent implements OnInit {
   currentTheme: string = '';
   hideDropdownTimeout: any;
 
+  constructor(private themeService: ThemeService) {
+    this.themeService.currentTheme.subscribe(
+      (theme) => (this.currentTheme = theme)
+    );
+  }
+
   toggleDropdown() {
     clearTimeout(this.hideDropdownTimeout); // clear the timeout
     this.showDropdown = true;
@@ -20,12 +26,6 @@ export class HeaderComponent implements OnInit {
     this.hideDropdownTimeout = setTimeout(() => {
       this.showDropdown = false;
     }, 3000); // 3000 milliseconds = 3 seconds
-  }
-
-  constructor(private themeService: ThemeService) {
-    this.themeService.currentTheme.subscribe(
-      (theme) => (this.currentTheme = theme)
-    );
   }
 
   ngOnInit(): void {}

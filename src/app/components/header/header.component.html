@@ -13,8 +13,8 @@
   <!-- ... -->
   <div
     class="icon"
-    (mouseenter)="showDropdown = true"
-    (mouseleave)="showDropdown = false"
+    (mouseenter)="toggleDropdown()"
+    (mouseleave)="hideDropdown()"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -26,9 +26,10 @@
   // ...
 
   .icon {
+    // visibility: hidden;
     position: relative;
     cursor: pointer;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     align-self: center;

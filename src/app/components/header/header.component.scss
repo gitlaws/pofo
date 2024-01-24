@@ -12,7 +12,7 @@
     align-self: center;
     text-decoration: none;
     font-family: "Rubik Glitch", serif;
-    font-size: 78px;
+    font-size: 76px;
     @include linear-gradient-logo;
   }
   // Theme Toggle
@@ -90,7 +90,7 @@
           align-items: center;
           list-style: none;
           padding: 0;
-          gap: 20px; // creates space between list items
+          gap: 10px; // creates space between list items
 
           li {
             margin: 0;
@@ -201,7 +201,7 @@
   }
 
   @media (max-width: $mobile) {
-    flex-direction: row;
+    // flex-direction: row;
 
     .navbar-container {
       flex-direction: column;
@@ -227,9 +227,10 @@
 
     .menu ul {
       // flex-wrap: wrap;
-      flex-direction: row;
+      // flex-direction: row;
       align-items: center;
       display: none;
+      // gap: 5px;
 
       li {
         margin: 1rem 0;

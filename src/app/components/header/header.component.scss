@@ -4,7 +4,7 @@
 
 .navbar-container {
   display: flex;
-  justify-content: space-evenly;
+  // justify-content: space-evenly;
 
   .navbar-logo {
     display: flex;
@@ -238,4 +238,8 @@
       }
     }
   }
+}
+
+.navbar-container > :first-child {
+  margin-right: auto;
 }

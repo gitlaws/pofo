@@ -4,7 +4,7 @@
 
 .navbar-container {
   display: flex;
-  // justify-content: space-around;
+  // justify-content: space-between;
 
   .navbar-logo {
     display: flex;
@@ -161,7 +161,7 @@
       align-items: center;
       list-style: none;
       padding: 0;
-      gap: 20px; // creates space between list items
+      gap: 0.5em;
 
       li {
         margin: 0;
@@ -179,8 +179,8 @@
           transition: background-color 0.3s ease, color 0.3s ease;
 
           &:hover {
-            // background-color: #007bff; // blue background on hover
-            color: #fff; // white icon on hover
+            // background-color: #007bff;
+            color: #fff;
           }
 
           i {
@@ -241,5 +241,11 @@
 }
 
 .navbar-container > :first-child {
+margin-left: 200px;
   margin-right: auto;
+}
+
+.navbar-container > :last-child {
+  margin-left: 20px;
+  margin-right: 53px;
 }

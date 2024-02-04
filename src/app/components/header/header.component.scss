@@ -16,11 +16,12 @@
     @include linear-gradient-logo;
   }
   
-  .flex-container {
+  .wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     align-self: center;
+    gap: 2em;
   }
 
   // Theme Toggle

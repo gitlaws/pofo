@@ -15,7 +15,7 @@
     font-size: 76px;
     @include linear-gradient-logo;
   }
-  
+
   .wrapper {
     display: flex;
     justify-content: center;
@@ -211,8 +211,6 @@
   }
 
   @media (max-width: $mobile) {
-    // flex-direction: row;
-
     .navbar-container {
       flex-direction: column;
       justify-content: space-around;
@@ -221,27 +219,17 @@
       width: 100%;
     }
 
-    .navbar-logo {
-      // margin-left: auto;
-      // margin-right: auto;
-    }
-
     nav {
       display: none;
     }
 
     .icon {
       display: block;
-      // margin-left: auto;
-      // margin-right: auto;
     }
 
     .menu ul {
-      // flex-wrap: wrap;
-      // flex-direction: row;
       align-items: center;
       display: none;
-      // gap: 5px;
 
       li {
         margin: 1rem 0;
@@ -249,21 +237,3 @@
     }
   }
 }
-
-// .navbar-container > :first-child {
-//   // margin-left: 200px;
-//   // margin-right: auto;
-// }
-
-// .flex-container {
-//   // margin-left: auto;
-//   // margin-right: auto;
-//   // margin-left: 20px;
-//   // margin-right: 53px;
-  
-// }
-
-// .navbar-container > :last-child {
-//   margin-left: 20px;
-//   margin-right: 53px;
-// }

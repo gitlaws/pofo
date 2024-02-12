@@ -61,7 +61,7 @@ $border-radius: 50%;
     height: 100%;
     border: 1px solid black;
     border-radius: $border-radius;
-    background-color: #faf7ff;
+    // background-color: #faf7ff;
   }
 
   &__icon {
@@ -73,8 +73,14 @@ $border-radius: 50%;
       @include spin-animation;
     }
   }
-}
 
-.btn__icon-container.clicked {
-  background-color: #333; // adjust as needed
+  &__icon-container.clicked {
+    &.clicked {
+      background-color: #faf7ff; // default color in light mode
+
+      .dark & {
+        background-color: #333; // color in dark mode
+      }
+    }
+  }
 }

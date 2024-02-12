@@ -16,6 +16,8 @@ export class ThemeToggleComponent implements OnInit {
 
   ngOnInit(): void {
     this.darkMode = this.themeService.getTheme() === 'dark';
+    const isClickedStorage = localStorage.getItem('isClicked');
+    this.isClicked = isClickedStorage ? JSON.parse(isClickedStorage) : false;
   }
 
   toggleDarkMode(): void {
@@ -35,6 +37,7 @@ export class ThemeToggleComponent implements OnInit {
     this.toggleDarkMode();
     this.toggleAnimation();
     this.isClicked = !this.isClicked;
+    localStorage.setItem('isClicked', JSON.stringify(this.isClicked));
     this.themeService.currentTheme.subscribe((theme) => {
       const nextTheme = theme === 'light' ? 'dark' : 'light';
       this.themeService.changeTheme(nextTheme);

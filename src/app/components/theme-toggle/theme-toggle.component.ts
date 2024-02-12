@@ -10,6 +10,7 @@ import { ThemeService } from 'src/app/services/theme.service';
 export class ThemeToggleComponent implements OnInit {
   darkMode: boolean = false;
   isAnimated = false;
+  isClicked = false;
 
   constructor(private themeService: ThemeService) {}
 
@@ -33,6 +34,7 @@ export class ThemeToggleComponent implements OnInit {
   toggleTheme() {
     this.toggleDarkMode();
     this.toggleAnimation();
+    this.isClicked = !this.isClicked;
     this.themeService.currentTheme.subscribe((theme) => {
       const nextTheme = theme === 'light' ? 'dark' : 'light';
       this.themeService.changeTheme(nextTheme);

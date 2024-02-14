@@ -14,6 +14,7 @@
     font-family: "Rubik Glitch", serif;
     font-size: 76px;
     @include linear-gradient-logo;
+    // @include glitchfx; todo: fix this mixin
   }
 
   .wrapper {

@@ -18,12 +18,21 @@ export class ThemeToggleComponent implements OnInit {
     this.darkMode = this.themeService.getTheme() === 'dark';
     const isClickedStorage = localStorage.getItem('isClicked');
     this.isClicked = isClickedStorage ? JSON.parse(isClickedStorage) : false;
+    const darkModeStorage = localStorage.getItem('darkMode');
+    this.darkMode = darkModeStorage ? JSON.parse(darkModeStorage) : false;
   }
 
   toggleDarkMode(): void {
     this.darkMode = !this.darkMode;
     const theme = this.darkMode ? 'dark' : 'light';
     this.themeService.setTheme(theme);
+  }
+
+  toggleTheme() {
+    this.isClicked = !this.isClicked;
+    this.darkMode = !this.darkMode;
+    this.updateLocalStorage();
+    this.themeService.changeTheme(this.darkMode ? 'dark' : 'light');
   }
 
   toggleAnimation() {
@@ -33,14 +42,8 @@ export class ThemeToggleComponent implements OnInit {
     }, 1000); // replace 1000 with the duration of your spin animation in milliseconds
   }
 
-  toggleTheme() {
-    this.toggleDarkMode();
-    this.toggleAnimation();
-    this.isClicked = !this.isClicked;
+  updateLocalStorage() {
     localStorage.setItem('isClicked', JSON.stringify(this.isClicked));
-    this.themeService.currentTheme.subscribe((theme) => {
-      const nextTheme = theme === 'light' ? 'dark' : 'light';
-      this.themeService.changeTheme(nextTheme);
-    });
+    localStorage.setItem('darkMode', JSON.stringify(this.darkMode));
   }
 }

@@ -9,6 +9,7 @@
         <button
           title="Toggle Dark Mode"
           class="btn__icon-container"
+          (click)="toggleTheme()"
           [ngClass]="{ 'darkmode-bg': darkMode, clicked: isClicked }"
         >
           <i

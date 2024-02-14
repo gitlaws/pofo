@@ -14,69 +14,68 @@ $border-radius: 50%;
   // height: 200px;
   // padding: 20px;
 
-
-.btn {
-  display: flex;
-  align-items: center;
-  width: 2.8em;
-  height: 1.5em;
-  // padding: 0 0.5em;
-  position: relative;
-  cursor: pointer;
-  border: 1px solid $btn-border;
-  border-radius: 10em;
-  background-color: rgba(101, 117, 133, 0.16);
-  box-shadow: $box-shadow;
-  transition: border-color 0.3s ease;
-
-  &:active {
-    transform: scale(
-      0.95
-    ); // slightly reduce the size of the button when clicked
-  }
-
-  &:hover {
-    border-color: $btn-hover;
-  }
-
-  &__indicator {
-    width: 1.2em;
-    height: 1.2em;
-    position: absolute;
-    border-radius: $border-radius;
-    box-shadow: $box-shadow;
-    transition: transform 0.3s ease;
-  }
-
-  &__icon-container {
+  .btn {
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
-    border: 1px solid black;
-    border-radius: $border-radius;
-    // background-color: #faf7ff;
-  }
+    width: 2.8em;
+    height: 1.5em;
+    // padding: 0 0.5em;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid $btn-border;
+    border-radius: 10em;
+    background-color: rgba(101, 117, 133, 0.16);
+    box-shadow: $box-shadow;
+    transition: border-color 0.3s ease;
 
-  &__icon {
-    font-size: 1rem;
-    color: $btn-icon;
-    transition: color 0.3s ease;
-
-    &.animated {
-      @include spin-animation;
+    &:active {
+      transform: scale(
+        0.95
+      ); // slightly reduce the size of the button when clicked
     }
-  }
 
-  &__icon-container.clicked {
-    &.clicked {
-      background-color: #faf7ff; // default color in light mode
+    &:hover {
+      border-color: $btn-hover;
+    }
 
-      .dark & {
+    &__indicator {
+      width: 1.2em;
+      height: 1.2em;
+      position: absolute;
+      border-radius: $border-radius;
+      box-shadow: $box-shadow;
+      transition: transform 0.3s ease;
+    }
+
+    &__icon-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      border: 1px solid black;
+      border-radius: $border-radius;
+      // background-color: #faf7ff;
+    }
+
+    &__icon {
+      font-size: 1rem;
+      color: $btn-icon;
+      transition: color 0.3s ease;
+
+      &.animated {
+        @include spin-animation;
+      }
+    }
+
+    &__icon-container {
+      &.clicked {
+        background-color: #faf7ff; // default color in light mode
+      }
+
+      &.clicked.darkmode-bg {
         background-color: #333; // color in dark mode
       }
     }
   }
-}
 }

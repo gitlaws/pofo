@@ -8,13 +8,15 @@ import { ThemeToggleComponent } from './components/theme-toggle/theme-toggle.com
 import { ComponentDocumentationComponent } from './components/component-documentation/component-documentation.component';
 import { HeaderComponent } from './components/header/header.component';
 import { GridPanelComponent } from './components/grid-panel/grid-panel.component';
+import { MainSectionComponent } from './components/main-section/main-section.component';
 @NgModule({
   declarations: [
     AppComponent,
     ThemeToggleComponent,
     ComponentDocumentationComponent,
     HeaderComponent,
-    GridPanelComponent
+    GridPanelComponent,
+    MainSectionComponent
   ],
   imports: [
     BrowserModule,

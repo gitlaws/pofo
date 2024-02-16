@@ -2,25 +2,33 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
+const LIGHT_THEME = 'light';
+const DARK_THEME = 'dark';
+
 @Injectable({
   providedIn: 'root',
 })
 export class ThemeService {
-  private readonly THEME_KEY = 'appTheme';
-  private themeSubject = new BehaviorSubject('light');
-  currentTheme = this.themeSubject.asObservable() as BehaviorSubject<string>;
+  private theme: 'light' | 'dark' = LIGHT_THEME;
+  private themeSubject: BehaviorSubject<'light' | 'dark'> = new BehaviorSubject<
+    'light' | 'dark'
+  >(this.theme);
 
-  changeTheme(theme: string) {
-    this.currentTheme.next(theme);
+  getTheme(): 'light' | 'dark' {
+    return this.theme;
   }
 
-  getTheme(): string | null {
-    return localStorage.getItem(this.THEME_KEY);
+  setTheme(theme: 'light' | 'dark'): void {
+    this.theme = theme;
+    this.themeSubject.next(this.theme);
   }
 
-  setTheme(theme: string): void {
-    localStorage.setItem(this.THEME_KEY, theme);
-    document.documentElement.setAttribute('data-theme', theme);
-    this.themeSubject.next(theme);
+  toggleTheme(): void {
+    this.theme = this.theme === LIGHT_THEME ? DARK_THEME : LIGHT_THEME;
+    this.themeSubject.next(this.theme);
+  }
+
+  get currentTheme() {
+    return this.themeSubject.asObservable();
   }
 }

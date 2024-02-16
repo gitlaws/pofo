@@ -1,27 +1,27 @@
-// app.component.ts
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { ThemeService } from './services/theme.service';
-import { Subscription } from 'rxjs';
+import { Theme } from './services/theme.enum';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  @HostBinding('attr.data-theme') theme: 'light' | 'dark' = 'light';
-  private themeSubscription: Subscription = new Subscription(); // Initialize themeSubscription here
+  constructor(
+    private themeService: ThemeService,
+    private renderer: Renderer2
+  ) {}
 
-  constructor(private themeService: ThemeService) {}
-
-  ngOnInit() {
-    this.themeSubscription.add(
-      this.themeService.currentTheme.subscribe((theme) => {
-        this.theme = theme;
-      })
-    );
-  }
-
-  ngOnDestroy() {
-    this.themeSubscription.unsubscribe();
+  ngOnInit(): void {
+    this.themeService.currentTheme.subscribe((theme) => {
+      if (theme === Theme.Dark) {
+        this.renderer.addClass(document.body, 'dark-theme');
+        this.renderer.removeClass(document.body, 'light-theme');
+      } else {
+        this.renderer.addClass(document.body, 'light-theme');
+        this.renderer.removeClass(document.body, 'dark-theme');
+      }
+    });
   }
 }

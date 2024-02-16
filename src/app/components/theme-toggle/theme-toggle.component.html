@@ -1,22 +1,11 @@
-<main class="parent">
-  <article class="child">
-    <div class="btn" (click)="toggle()" [class.darkmode]="isDarkMode">
-      <div class="btn__indicator" [style.transform]="indicatorTransform">
-        <button
-          title="Toggle Dark Mode"
-          class="btn__icon-container"
-          [class.darkmode-bg]="isDarkMode"
-          [class.clicked]="isClicked"
-        >
-          <i
-            class="btn__icon"
-            [class.fas]="true"
-            [class.fa-moon]="isDarkMode"
-            [class.fa-sun]="!isDarkMode"
-            [class.animated]="isAnimated"
-          ></i>
-        </button>
-      </div>
-    </div>
-  </article>
-</main>
+<button
+  (click)="toggleTheme()"
+  [attr.aria-label]="
+    theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'
+  "
+>
+  <span *ngIf="theme === 'dark'">&#9728;</span>
+  <!-- Sun icon for dark mode -->
+  <span *ngIf="theme === 'light'">&#9790;</span>
+  <!-- Moon icon for light mode -->
+</button>

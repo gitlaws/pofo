@@ -1,8 +1,6 @@
-// theme-toggle.component.ts
 import { Component, OnInit } from '@angular/core';
 import { ThemeService } from 'src/app/services/theme.service';
-import { Subject } from 'rxjs';
-import { debounceTime } from 'rxjs/operators';
+import { Theme } from 'src/app/services/theme.enum';
 
 @Component({
   selector: 'app-theme-toggle',
@@ -10,37 +8,17 @@ import { debounceTime } from 'rxjs/operators';
   styleUrls: ['./theme-toggle.component.scss'],
 })
 export class ThemeToggleComponent implements OnInit {
-  private clickSubject = new Subject<void>();
+  theme: Theme = Theme.Light; // Initialize theme with a default value
 
-  darkMode = false;
-  isAnimated = false;
-  isClicked = false;
-
-  constructor(private themeService: ThemeService) {
-    this.clickSubject.pipe(debounceTime(300)).subscribe(() => {
-      this.themeService.toggleTheme();
-    });
-  }
+  constructor(private themeService: ThemeService) {}
 
   ngOnInit(): void {
-    this.themeService.currentTheme.subscribe(() => {
-      this.isAnimated = true;
-      setTimeout(() => {
-        this.isAnimated = false;
-      }, 1000);
+    this.themeService.currentTheme.subscribe((theme) => {
+      this.theme = theme;
     });
   }
 
-  get isDarkMode(): boolean {
-    return this.themeService.getTheme() === 'dark';
-  }
-
-  get indicatorTransform(): string {
-    return this.isDarkMode ? 'translateX(1.5em)' : 'none';
-  }
-
-  toggle(): void {
-    // this.themeService.toggleTheme();
-    this.clickSubject.next();
+  toggleTheme(): void {
+    this.themeService.toggleTheme();
   }
 }

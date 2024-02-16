@@ -9,17 +9,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@1,900&display=swap");
 @import "~@fortawesome/fontawesome-free/css/all.css";
 
-:root {
-  --background-color: #e6e6e6;
-  --text-color: #000;
-  --navbar-container: #3a3a3a;
-}
-
-[data-theme="dark"] {
-  --background-color: #121212;
-  --text-color: #fff;
-}
-
 * {
   scroll-behavior: smooth;
   padding: 0;
@@ -29,6 +18,17 @@
 }
 
 body {
-  background-color: var(--background-color);
-  color: var(--text-color);
+  transition: background-color 0.3s ease;
+}
+
+body.light-theme {
+  background-color: #fff;
+  color: #333;
+  /* Add other styles for light theme here */
+}
+
+body.dark-theme {
+  background-color: #333;
+  color: #fff;
+  /* Add other styles for dark theme here */
 }

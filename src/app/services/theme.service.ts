@@ -1,34 +1,29 @@
-// theme.service.ts
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-
-const LIGHT_THEME = 'light';
-const DARK_THEME = 'dark';
+import { Theme } from './theme.enum';
+import { StorageService } from './storage.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ThemeService {
-  private theme: 'light' | 'dark' = LIGHT_THEME;
-  private themeSubject: BehaviorSubject<'light' | 'dark'> = new BehaviorSubject<
-    'light' | 'dark'
-  >(this.theme);
+  private themeKey = 'theme';
+  private themeSubject: BehaviorSubject<Theme>;
 
-  getTheme(): 'light' | 'dark' {
-    return this.theme;
-  }
-
-  setTheme(theme: 'light' | 'dark'): void {
-    this.theme = theme;
-    this.themeSubject.next(this.theme);
-  }
-
-  toggleTheme(): void {
-    this.theme = this.theme === LIGHT_THEME ? DARK_THEME : LIGHT_THEME;
-    this.themeSubject.next(this.theme);
+  constructor(private storageService: StorageService) {
+    const storedTheme =
+      (this.storageService.getItem(this.themeKey) as Theme) || Theme.Light;
+    this.themeSubject = new BehaviorSubject<Theme>(storedTheme);
   }
 
   get currentTheme() {
     return this.themeSubject.asObservable();
+  }
+
+  toggleTheme(): void {
+    const newTheme =
+      this.themeSubject.value === Theme.Light ? Theme.Dark : Theme.Light;
+    this.storageService.setItem(this.themeKey, newTheme);
+    this.themeSubject.next(newTheme);
   }
 }

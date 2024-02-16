@@ -3,6 +3,21 @@
 @import "src/styles/_variables";
 
 button {
-  transition: background-color 0.3s ease;
-  /* other styles... */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5em;
+  height: 1.5em;
+  // border: none;
+  border: 1px solid $btn-border;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #fff;
+  color: #000;
+
+  &.dark-theme {
+    background-color: #000;
+    color: #fff;
+  }
 }

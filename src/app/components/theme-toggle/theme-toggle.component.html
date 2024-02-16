@@ -3,9 +3,11 @@
   [attr.aria-label]="
     theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'
   "
+  [ngClass]="{ 'dark-theme': theme === 'dark' }"
+  aria-label="Toggle theme"
 >
-  <span *ngIf="theme === 'dark'">&#9728;</span>
+  <i *ngIf="theme === 'dark'" class="fas fa-sun"></i>
   <!-- Sun icon for dark mode -->
-  <span *ngIf="theme === 'light'">&#9790;</span>
+  <i *ngIf="theme === 'light'" class="fas fa-moon"></i>
   <!-- Moon icon for light mode -->
 </button>

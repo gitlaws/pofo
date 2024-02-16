@@ -1,7 +1,11 @@
 <main class="parent">
   <article class="child">
     <!-- theme-toggle.button -->
-    <div class="btn" (click)="toggleTheme()" [ngClass]="{ darkmode: darkMode }">
+    <div
+      class="btn"
+      (click)="toggleTheme(); toggleAnimation()"
+      [ngClass]="{ darkmode: darkMode }"
+    >
       <div
         class="btn__indicator"
         [ngStyle]="{ transform: darkMode ? 'translateX(1.5em)' : 'none' }"
@@ -9,7 +13,6 @@
         <button
           title="Toggle Dark Mode"
           class="btn__icon-container"
-          (click)="toggleTheme()"
           [ngClass]="{ 'darkmode-bg': darkMode, clicked: isClicked }"
         >
           <i

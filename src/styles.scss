@@ -22,14 +22,14 @@ body {
 }
 
 body.light-theme {
-  background-color: #fff;
+  background-color: $body-light-mode-color;
   // color: #333;
 
   /* Add other styles for light theme here */
 }
 
 body.dark-theme {
-  background-color: #333;
+  background-color: $body-dark-mode-color;
   // color: #fff;
 
   /* Add other styles for dark theme here */

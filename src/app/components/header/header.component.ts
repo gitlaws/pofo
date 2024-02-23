@@ -13,11 +13,7 @@ export class HeaderComponent implements OnInit {
   hideDropdownTimeout: any;
   isDarkMode: boolean = false;
 
-  constructor(private themeService: ThemeService) {
-    this.themeService.currentTheme.subscribe(
-      (theme) => (this.currentTheme = theme)
-    );
-  }
+  constructor(private themeService: ThemeService) {}
 
   toggleDropdown() {
     clearTimeout(this.hideDropdownTimeout); // clear the timeout

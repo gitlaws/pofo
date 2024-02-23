@@ -41,22 +41,6 @@
     align-items: center;
     align-self: center;
 
-    &.light-theme {
-      background-color: $light-theme-menu-bg-color;
-
-      &:hover {
-        background-color: $light-theme-menu-hover-color;
-      }
-    }
-
-    &.dark-theme {
-      background-color: $dark-theme-menu-bg-color;
-
-      &:hover {
-        background-color: $dark-theme-menu-hover-color;
-      }
-    }
-
     ul {
       display: flex;
       justify-content: center;
@@ -73,7 +57,13 @@
           align-self: center;
           align-items: center;
           text-decoration: none;
+          // color: #333; // dark grey icon
           transition: background-color 0.3s ease, color 0.3s ease;
+
+          // &:hover {
+          //   // background-color: #007bff;
+          //   color: #fff;
+          // }
 
           i {
             font-size: 24px;

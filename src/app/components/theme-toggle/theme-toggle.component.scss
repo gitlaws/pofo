@@ -2,22 +2,65 @@
 @import "src/styles/_mixins";
 @import "src/styles/_variables";
 
-button {
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.child {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.highlight {
+  color: #ff6347;
+}
+
+.btn {
+  margin-top: 20px;
+  cursor: pointer;
+  background-color: #ff6347;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn.darkmode {
+  background-color: #333;
+}
+
+.btn__indicator {
+  transition: transform 0.3s ease;
+}
+
+.btn__icon-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.5em;
-  height: 1.5em;
-  // border: none;
-  border: 1px solid $btn-border;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  // background-color: #fff;
-  // color: #000;
+}
 
-  &.dark-theme {
-    background-color: #000;
-    color: #fff;
+.btn__icon {
+  font-size: 20px;
+}
+
+.darkmode-bg {
+  background-color: #333;
+  color: white;
+}
+
+.animated {
+  animation: rotate 0.5s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

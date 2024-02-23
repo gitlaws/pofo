@@ -1,13 +1,28 @@
-<button
-  (click)="toggleTheme()"
-  [attr.aria-label]="
-    theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'
-  "
-  [ngClass]="{ 'dark-theme': theme === 'dark' }"
-  aria-label="Toggle theme"
->
-  <i *ngIf="theme === 'dark'" class="fas fa-sun"></i>
-  <!-- Sun icon for dark mode -->
-  <i *ngIf="theme === 'light'" class="fas fa-moon"></i>
-  <!-- Moon icon for light mode -->
-</button>
+<main class="parent">
+  <article class="child">
+    <h1><span class="highlight">Theme</span></h1>
+    <!-- theme-toggle.button -->
+    <div class="btn" (click)="toggleTheme()" [class.darkmode]="isDarkMode">
+      <div
+        class="btn__indicator"
+        [ngStyle]="{ transform: isDarkMode ? 'translateX(1.5em)' : 'none' }"
+      >
+        <button
+          title="Toggle Dark Mode"
+          class="btn__icon-container"
+          [attr.aria-label]="
+            isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'
+          "
+          [class.darkmode-bg]="isDarkMode"
+        >
+          <i
+            [class]="
+              isDarkMode ? 'fas fa-moon btn__icon' : 'fas fa-sun btn__icon'
+            "
+            [class.animated]="isAnimated"
+          ></i>
+        </button>
+      </div>
+    </div>
+  </article>
+</main>

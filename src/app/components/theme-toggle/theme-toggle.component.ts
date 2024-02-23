@@ -27,3 +27,4 @@ export class ThemeToggleComponent implements OnInit {
     this.themeService.toggleTheme();
   }
 }
+

@@ -6,15 +6,19 @@
   display: flex;
   justify-content: space-around;
 
-  .navbar-logo {
+  .navbar-logo-background {
     display: flex;
     align-items: center;
     align-self: center;
+    @include pulsate;
+  }
+
+  .navbar-logo {
     text-decoration: none;
     font-family: "Rubik Glitch", serif;
     font-size: 76px;
+    background-color: transparent;
     @include linear-gradient-logo;
-    @include glitchfx(#c1c1c1, #f2f2f2);
   }
 
   .wrapper {

@@ -49,26 +49,6 @@
   }
 }
 
-@mixin glitchfx($color1: #2ca19d, $color2: #320b97) {
-  @keyframes glitchy {
-    0% {
-      text-shadow: 5px 4px $color1, -5px -6px $color2;
-    }
-    25% {
-      text-shadow: -5px -6px $color1, 5px 4px $color2;
-    }
-    50% {
-      text-shadow: 5px -4px $color1, -8px 4px $color2;
-    }
-    75% {
-      text-shadow: -8px -4px $color1, -5px -4px $color2;
-    }
-    100% {
-      text-shadow: -5px 0 $color1, 5px -4px $color2;
-    }
-  }
-}
-
 @mixin spin-animation {
   animation: spin 0.5s ease-in-out 5;
 
@@ -86,4 +66,18 @@
   display: flex;
   align-items: center;
   align-self: center;
+}
+
+@mixin pulsate {
+  @keyframes pulsate {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  animation: pulsate 12s ease-in-out infinite;
 }

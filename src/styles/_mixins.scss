@@ -68,7 +68,7 @@
 }
 
 @mixin spin-animation {
-  animation: spin 0.5s;
+  animation: spin 0.5s ease-in-out 5;
 
   @keyframes spin {
     from {

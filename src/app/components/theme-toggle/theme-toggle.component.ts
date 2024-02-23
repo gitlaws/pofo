@@ -25,6 +25,9 @@ export class ThemeToggleComponent implements OnInit {
 
   toggleTheme(): void {
     this.themeService.toggleTheme();
+    this.isAnimated = true;
+    setTimeout(() => {
+      this.isAnimated = false;
+    }, 500); // Remove the class after the duration of the animation
   }
 }
-

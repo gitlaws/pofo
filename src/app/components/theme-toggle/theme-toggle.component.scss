@@ -69,10 +69,13 @@ $border-radius: 50%;
       font-size: 1rem;
       color: $btn-icon;
       transition: color 0.3s ease;
-      &.animated {
-        @include spin-animation;
-      }
     }
+
+    .btn__icon.spin {
+      @include spin-animation;
+    }
+
+    @include spin-animation;
 
     .darkmode-bg {
       background-color: #333;

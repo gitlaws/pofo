@@ -1,17 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ThemeService } from 'src/app/services/theme.service';
 import { Theme } from 'src/app/services/theme.enum';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
   currentTheme: string = '';
   showDropdown = false;
   hideDropdownTimeout: any;
   isDarkMode: boolean = false;
+
+  private unsubscribe$ = new Subject<void>();
 
   constructor(private themeService: ThemeService) {}
 
@@ -27,8 +31,15 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.themeService.currentTheme.subscribe((theme) => {
-      this.isDarkMode = theme === Theme.Dark;
-    });
+    this.themeService.currentTheme
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((theme) => {
+        this.isDarkMode = theme === Theme.Dark;
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
   }
 }

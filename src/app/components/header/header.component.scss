@@ -67,18 +67,22 @@
 
           i {
             font-size: 24px;
-          }
 
-          &.dark {
-            // styles for dark mode
-            background-color: #333;
-            color: #fff;
-          }
+            &.dark {
+              // styles for dark mode
+              color: #aaa;
+              &:hover {
+                color: #ccc;
+              }
+            }
 
-          &.light {
-            // styles for light mode
-            background-color: #fff;
-            color: #333;
+            &.light {
+              // styles for light mode
+              color: #777;
+              &:hover {
+                color: #666;
+              }
+            }
           }
         }
       }

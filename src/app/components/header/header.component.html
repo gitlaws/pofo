@@ -13,7 +13,7 @@
       ></ng-content>
     </nav>
     <!-- Social Links -->
-    <div class="menu">
+    <div class="menu" [class.dark]="isDarkMode" [class.light]="!isDarkMode">
       <ul>
         <li>
           <a href=""><i class="fab fa-youtube" aria-hidden="true"></i></a>

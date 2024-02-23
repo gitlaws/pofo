@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemeService } from 'src/app/services/theme.service';
+import { Theme } from 'src/app/services/theme.enum';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,10 @@ import { ThemeService } from 'src/app/services/theme.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  showDropdown = false;
   currentTheme: string = '';
+  showDropdown = false;
   hideDropdownTimeout: any;
+  isDarkMode: boolean = false;
 
   constructor(private themeService: ThemeService) {
     this.themeService.currentTheme.subscribe(
@@ -28,5 +30,9 @@ export class HeaderComponent implements OnInit {
     }, 3000); // 3000 milliseconds = 3 seconds
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.themeService.currentTheme.subscribe((theme) => {
+      this.isDarkMode = theme === Theme.Dark;
+    });
+  }
 }

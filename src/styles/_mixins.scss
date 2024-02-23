@@ -1,3 +1,5 @@
+@import "src/styles/_colors.scss";
+
 @mixin box-shadow {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -47,22 +49,22 @@
   }
 }
 
-@mixin glitchfx {
+@mixin glitchfx($color1: #2ca19d, $color2: #320b97) {
   @keyframes glitchy {
     0% {
-      text-shadow: 5px 4px #c1c1c1, -5px -6px #f2f2f2;
+      text-shadow: 5px 4px $color1, -5px -6px $color2;
     }
     25% {
-      text-shadow: -5px -6px #c1c1c1, 5px 4px #f2f2f2;
+      text-shadow: -5px -6px $color1, 5px 4px $color2;
     }
     50% {
-      text-shadow: 5px -4px #c1c1c1, -8px 4px #f2f2f2;
+      text-shadow: 5px -4px $color1, -8px 4px $color2;
     }
     75% {
-      text-shadow: -8px -4px #c1c1c1, -5px -4px #f2f2f2;
+      text-shadow: -8px -4px $color1, -5px -4px $color2;
     }
     100% {
-      text-shadow: -5px 0 #c1c1c1, 5px -4px #f2f2f2;
+      text-shadow: -5px 0 $color1, 5px -4px $color2;
     }
   }
 }

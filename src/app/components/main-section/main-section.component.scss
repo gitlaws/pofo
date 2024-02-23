@@ -1,5 +1,19 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+}
+
 .main-content {
   display: flex;
   text-align: center;
   justify-content: center;
+  grid-column: 1;
+
+  @media (min-width: 768px) {
+    grid-column: 2;
+  }
 }

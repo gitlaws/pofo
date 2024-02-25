@@ -13,6 +13,12 @@
   justify-content: center;
   grid-column: 1;
 
+  p {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
   @media (min-width: 768px) {
     grid-column: 2;
   }

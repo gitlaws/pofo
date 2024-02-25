@@ -7,8 +7,8 @@
 
     <!-- <a href="javascript:void(0)" class="navbar-logo">Ś</a> -->
   </div>
+  <!-- Theme Toggle -->
   <div class="wrapper">
-    <!-- Theme Toggle -->
     <nav>
       <ng-content
         class="navbar-theme-toggle"
@@ -63,10 +63,9 @@
       </ul>
     </div>
   </div>
-
   <!-- Dropdown -->
   <div
-    class="icon"
+    class="ellipsis-icon"
     (mouseenter)="toggleDropdown()"
     (mouseleave)="hideDropdown()"
   >
@@ -75,7 +74,7 @@
       aria-hidden="true"
       focusable="false"
       viewbox="0 0 24 24"
-      class="icon"
+      class="svg-icon"
     >
       <circle cx="12" cy="12" r="2"></circle>
       <circle cx="19" cy="12" r="2"></circle>

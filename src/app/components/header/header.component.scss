@@ -5,6 +5,8 @@
 .navbar-container {
   display: flex;
   justify-content: space-around;
+  position: relative;
+  z-index: 2;
 
   .navbar-logo-background {
     display: flex;
@@ -18,7 +20,7 @@
     font-family: "Rubik Glitch", serif;
     font-size: 76px;
     background-color: transparent;
-    // @include linear-gradient-logo;
+    @include linear-gradient-logo;
   }
 
   .wrapper {
@@ -103,8 +105,9 @@
 
     .dropdown-content {
       position: absolute;
-      top: 100%;
-      right: 0;
+      z-index: 1000;
+      top: 50%;
+      right: 50%;
       display: none;
       flex-direction: column;
       gap: 10px;
@@ -124,7 +127,7 @@
         justify-content: center;
         align-items: center;
 
-        // Styles for links
+        // Links hover color
         &:hover {
           color: #007bff;
         }
@@ -201,6 +204,8 @@
       align-items: center;
       align-self: center;
       width: 100%;
+      position: relative;
+      z-index: 2;
     }
 
     nav {

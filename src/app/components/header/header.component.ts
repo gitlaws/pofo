@@ -11,23 +11,26 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   currentTheme: string = '';
-  showDropdown = false;
-  hideDropdownTimeout: any;
+  showDropdown: boolean = false;
+  hideDropdownTimeout: ReturnType<typeof setTimeout> | undefined;
   isDarkMode: boolean = false;
+  private readonly darkTheme: Theme = Theme.Dark;
 
   private unsubscribe$ = new Subject<void>();
 
   constructor(private themeService: ThemeService) {}
 
-  toggleDropdown() {
-    clearTimeout(this.hideDropdownTimeout); // clear the timeout
+  toggleDropdown(): void {
+    if (this.hideDropdownTimeout) {
+      clearTimeout(this.hideDropdownTimeout);
+    }
     this.showDropdown = true;
   }
 
-  hideDropdown() {
+  hideDropdown(): void {
     this.hideDropdownTimeout = setTimeout(() => {
       this.showDropdown = false;
-    }, 3000); // 3000 milliseconds = 3 seconds
+    }, 3000);
   }
 
   ngOnInit(): void {
@@ -41,5 +44,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
+    if (this.hideDropdownTimeout) {
+      clearTimeout(this.hideDropdownTimeout);
+    }
   }
 }

@@ -16,7 +16,6 @@ $hover-color: #007bff;
     display: flex;
     align-items: center;
     align-self: center;
-    // @include pulsate;
   }
 
   .navbar-logo {
@@ -24,7 +23,11 @@ $hover-color: #007bff;
     font-family: "Rubik Glitch", serif;
     font-size: 76px;
     background-color: transparent;
-    @include linear-gradient-logo;
+    // @include linear-gradient-logo;
+  }
+
+  .navbar-logo img {
+    animation: pulse 4s infinite ease-in-out;
   }
 
   .wrapper {

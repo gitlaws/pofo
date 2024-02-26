@@ -66,14 +66,12 @@
     class="ellipsis-icon"
     (mouseenter)="toggleDropdown()"
     (mouseleave)="hideDropdown()"
-    (click)="openDropdown(); stopPropagation($event)"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
       focusable="false"
       viewbox="0 0 24 24"
-      (click)="openDropdown(); stopPropagation($event)"
     >
       <circle cx="12" cy="12" r="2"></circle>
       <circle cx="19" cy="12" r="2"></circle>
@@ -83,7 +81,6 @@
     <div
       class="dropdown-content"
       *ngIf="showDropdown"
-      (click)="openDropdown(); stopPropagation($event)"
       [ngClass]="{ 'theme-dark': isDarkMode }"
     >
       <a href="javascript:void(0)">Item 1</a>

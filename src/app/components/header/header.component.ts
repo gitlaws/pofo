@@ -14,6 +14,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   showDropdown: boolean = false;
   hideDropdownTimeout: ReturnType<typeof setTimeout> | undefined;
   isDarkMode: boolean = false;
+  stayOpen: boolean = false;
+  dropdownOpen: boolean = false;
+
   private readonly darkTheme: Theme = Theme.Dark;
 
   private unsubscribe$ = new Subject<void>();
@@ -31,6 +34,19 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.hideDropdownTimeout = setTimeout(() => {
       this.showDropdown = false;
     }, 3000);
+  }
+
+  openDropdown(): void {
+    this.dropdownOpen = true;
+  }
+
+  closeDropdown(): void {
+    this.dropdownOpen = false;
+  }
+
+  stopPropagation(event: Event): void {
+    event.stopPropagation();
+    this.stayOpen = true;
   }
 
   ngOnInit(): void {

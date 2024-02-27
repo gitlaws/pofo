@@ -14,20 +14,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
   showDropdown = false;
   hideDropdownTimeout: any;
   isDarkMode: boolean = false;
-  logoPath = 'assets/slogo.png';
+  logoPath!: string;
 
   private unsubscribe$ = new Subject<void>();
 
   constructor(private themeService: ThemeService) {}
-
-  toggleTheme() {
-    this.isDarkMode = !this.isDarkMode;
-    this.logoPath = this.isDarkMode ? 'assets/slogod.png' : 'assets/slogo.png';
-  }
-
-  handleError() {
-    this.logoPath = 'assets/error.png'; // path to a fallback image
-  }
 
   toggleDropdown() {
     clearTimeout(this.hideDropdownTimeout); // clear the timeout
@@ -46,6 +37,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
       .subscribe((theme) => {
         this.isDarkMode = theme === Theme.Dark;
       });
+    this.themeService.currentLogoPath.subscribe(
+      (path) => (this.logoPath = path)
+    );
   }
 
   ngOnDestroy(): void {

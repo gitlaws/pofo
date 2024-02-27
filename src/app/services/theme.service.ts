@@ -10,6 +10,13 @@ export class ThemeService {
   private themeKey = 'theme';
   private themeSubject: BehaviorSubject<Theme>;
 
+  private logoPathSource = new BehaviorSubject('assets/slogo.png');
+  currentLogoPath = this.logoPathSource.asObservable();
+
+  changeLogoPath(path: string) {
+    this.logoPathSource.next(path);
+  }
+
   constructor(private storageService: StorageService) {
     const storedTheme =
       (this.storageService.getItem(this.themeKey) as Theme) || Theme.Light;

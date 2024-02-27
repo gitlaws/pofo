@@ -171,28 +171,36 @@
 
           li {
             margin: 0;
-            a {
-              display: flex;
-              justify-content: center;
-              align-self: center;
-              align-items: center;
-              text-decoration: none;
-              transition: background-color 0.3s ease, color 0.3s ease;
-              color: $dark-mode-icon;
+           a {
+          display: flex;
+          justify-content: center;
+          align-self: center;
+          align-items: center;
+          text-decoration: none;
+          transition: background-color 0.3s ease, color 0.3s ease;
 
-              i {
-                font-size: 24px;
-                // color: $light-mode-icon;
+          i {
+            font-size: 24px;
+
+            &.dark {
+              // styles for dark mode
+              color: #aaa;
+              &:hover {
+                color: #ccc;
               }
             }
 
-            .theme-dark a {
-              color: $light-mode-icon;
-
-              i {
-                color: $dark-mode-icon;
+            &.light {
+              // styles for light mode
+              color: #777;
+              &:hover {
+                color: #666;
               }
             }
+          }
+        }
+
+            
           }
         }
       }

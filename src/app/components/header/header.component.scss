@@ -182,12 +182,12 @@
 
               i {
                 font-size: 24px;
-                color: $light-mode-icon;
+                // color: $light-mode-icon;
               }
             }
 
             .theme-dark a {
-              color: $dark-mode-icon;
+              color: $light-mode-icon;
 
               i {
                 color: $dark-mode-icon;

@@ -78,26 +78,14 @@ $border-radius: 50%;
     &.dark {
       // styles for dark mode
       &:hover {
-        &.dark {
-          // styles for dark mode
-          &:hover {
-            border-color: #7df9ff; // Electric Blue for dark mode hover
-          }
-        }
-
-        &.light {
-          // styles for light mode
-          &:hover {
-            border-color: #00ff00; // Electric Green for light mode hover
-          }
-        }
+        border-color: #4682b4; // Steel Blue for dark mode hover
       }
     }
 
     &.light {
       // styles for light mode
       &:hover {
-        border-color: #2ecc71; // Emerald for light mode hover
+        border-color: #3cb371; // Medium Sea Green for light mode hover
       }
     }
 

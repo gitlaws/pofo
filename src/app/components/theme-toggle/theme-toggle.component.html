@@ -2,7 +2,7 @@
   <article class="child">
     <!-- <h1><span class="highlight">Theme</span></h1> -->
     <!-- theme-toggle.button -->
-    <div ; [class.darkmode]="isDarkMode">
+    <div class="btn" (click)="toggleTheme()" [class.darkmode]="isDarkMode">
       <div
         class="btn__indicator"
         [ngStyle]="{ transform: isDarkMode ? 'translateX(1.88em)' : 'none' }"

@@ -10,7 +10,6 @@ import { Theme } from 'src/app/services/theme.enum';
 export class ThemeToggleComponent implements OnInit {
   isDarkMode!: boolean;
   isAnimated: boolean = false;
-  logoPath = 'assets/slogo.png';
 
   constructor(private themeService: ThemeService) {}
 
@@ -26,14 +25,5 @@ export class ThemeToggleComponent implements OnInit {
     setTimeout(() => {
       this.isAnimated = false;
     }, 500); // Remove the class after the duration of the animation
-  }
-
-  toggleImage() {
-    const newLogoPath =
-      this.logoPath === 'assets/slogo.png'
-        ? 'assets/slogod.png'
-        : 'assets/slogo.png';
-    this.themeService.changeLogoPath(newLogoPath);
-    this.logoPath = newLogoPath;
   }
 }

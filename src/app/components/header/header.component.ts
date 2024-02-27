@@ -14,7 +14,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   showDropdown = false;
   hideDropdownTimeout: any;
   isDarkMode: boolean = false;
-  logoPath!: string;
 
   private unsubscribe$ = new Subject<void>();
 
@@ -37,9 +36,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
       .subscribe((theme) => {
         this.isDarkMode = theme === Theme.Dark;
       });
-    this.themeService.currentLogoPath.subscribe(
-      (path) => (this.logoPath = path)
-    );
   }
 
   ngOnDestroy(): void {

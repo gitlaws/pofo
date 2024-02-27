@@ -35,8 +35,8 @@ $border-radius: 50%;
     transition: border-color 0.3s ease;
 
     .btn__indicator {
-      width: 1.40em;
-      height: 1.40em;
+      width: 1.4em;
+      height: 1.4em;
       position: absolute;
       border-radius: $border-radius;
       box-shadow: $box-shadow;
@@ -75,9 +75,35 @@ $border-radius: 50%;
       ); // slightly reduce the size of the button when clicked
     }
 
-    &:hover {
-      border-color: $btn-hover;
+    &.dark {
+      // styles for dark mode
+      &:hover {
+        &.dark {
+          // styles for dark mode
+          &:hover {
+            border-color: #7df9ff; // Electric Blue for dark mode hover
+          }
+        }
+
+        &.light {
+          // styles for light mode
+          &:hover {
+            border-color: #00ff00; // Electric Green for light mode hover
+          }
+        }
+      }
     }
+
+    &.light {
+      // styles for light mode
+      &:hover {
+        border-color: #2ecc71; // Emerald for light mode hover
+      }
+    }
+
+    // &:hover {
+    //   border-color: $btn-hover;
+    // }
 
     .btn.darkmode {
       background-color: #333;

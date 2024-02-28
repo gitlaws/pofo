@@ -10,6 +10,7 @@
 
   <!-- Nav Wrap -->
   <div class="wrapper">
+    <!-- Theme Button -->
     <nav>
       <ng-content
         class="navbar-theme-toggle"
@@ -18,7 +19,6 @@
         aria-expanded="false"
       ></ng-content>
     </nav>
-
     <!-- Social Links -->
     <div class="menu-social-links">
       <ul>
@@ -65,7 +65,7 @@
       </ul>
     </div>
   </div>
-  <!-- Dropdown Menu -->
+  <!-- Ellipsis -->
   <div
     class="ellipsis-container"
     (mouseenter)="toggleDropdown()"
@@ -76,14 +76,16 @@
       <div [ngClass]="{ 'theme-dark': isDarkMode }"></div>
       <div [ngClass]="{ 'theme-dark': isDarkMode }"></div>
     </div>
-    <!-- Menu Content -->
+    <!-- Dropdown Menu -->
     <div
       class="dropdown-content"
       *ngIf="showDropdown"
       [ngClass]="{ 'theme-dark': isDarkMode }"
     >
+      <!-- Links -->
       <a href="javascript:void(0)">Item 1</a>
       <a href="javascript:void(0)">Item 2</a>
+      <!-- Theme Toggle Button -->
       <app-theme-toggle class="dropdown-theme-toggle"></app-theme-toggle>
 
       <!-- Social Links -->

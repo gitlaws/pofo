@@ -30,7 +30,7 @@ export class ThemeToggleComponent implements OnInit {
   toggleLogo() {
     const logo = document.getElementById('logo') as HTMLImageElement;
     logo.src = logo.src.includes('slogo')
-      ? 'assets/alternateLogo.png'
+      ? 'assets/slogrn.png'
       : 'assets/slogo.png';
   }
 }

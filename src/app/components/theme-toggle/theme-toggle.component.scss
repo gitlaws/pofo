@@ -98,7 +98,10 @@ $border-radius: 50%;
     }
   }
 
-  // .logo-toggle-button.hidden {
-  //   visibility: hidden;
-  // }
+  .logo-toggle-button.hidden {
+    // visibility: hidden;
+    // display: none;
+    background-color: #ffcc00;
+    color: #333;
+  }
 }

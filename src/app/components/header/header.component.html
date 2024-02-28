@@ -73,9 +73,9 @@
     (mouseleave)="hideDropdown()"
   >
     <div class="ellipsis">
-      <div></div>
-      <div></div>
-      <div></div>
+      <div [ngClass]="{ 'theme-dark': isDarkMode }"></div>
+      <div [ngClass]="{ 'theme-dark': isDarkMode }"></div>
+      <div [ngClass]="{ 'theme-dark': isDarkMode }"></div>
     </div>
     <!-- Dropdown Content -->
     <div

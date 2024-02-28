@@ -17,8 +17,9 @@
         aria-expanded="false"
       ></ng-content>
     </nav>
+
     <!-- Social Links -->
-    <div class="menu">
+    <div class="menu-social-links">
       <ul>
         <li>
           <a href=""
@@ -65,21 +66,15 @@
   </div>
   <!-- Dropdown -->
   <div
-    class="ellipsis-icon"
+    class="ellipsis-container"
     (mouseenter)="toggleDropdown()"
     (mouseleave)="hideDropdown()"
   >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-      focusable="false"
-      viewbox="0 0 24 24"
-      [ngClass]="{ 'svg-dark': isDarkMode, 'svg-light': !isDarkMode }"
-    >
-      <circle cx="12" cy="12" r="2"></circle>
-      <circle cx="19" cy="12" r="2"></circle>
-      <circle cx="5" cy="12" r="2"></circle>
-    </svg>
+    <div class="ellipsis">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
     <!-- Dropdown Content -->
     <div
       class="dropdown-content"

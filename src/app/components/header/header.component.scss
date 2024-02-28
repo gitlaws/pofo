@@ -99,6 +99,9 @@
     justify-content: center;
     align-items: center;
     align-self: center;
+    background-image: url("path/to/opsight.png"); // replace 'path/to/opsight.png' with the actual path to your image
+    background-repeat: no-repeat;
+    background-size: cover;
 
     .ellipsis {
       display: flex;

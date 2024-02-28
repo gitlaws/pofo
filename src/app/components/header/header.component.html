@@ -1,15 +1,14 @@
 <header class="navbar-container" [ngClass]="currentTheme">
-  <!-- Navbar Logo -->
+  <!-- Logo -->
+  <a href="javascript:void(0)" class="navbar-logo">
+    <img id="logo" src="assets/slogo.png" />
+  </a>
   <!-- <div class="navbar-logo-background">
     <a href="javascript:void(0)" class="navbar-logo">
       <img src="assets/slogo.png" />
     </a> -->
 
-  <a href="javascript:void(0)" class="navbar-logo">
-    <img id="logo" src="assets/slogo.png" />
-  </a>
-
-  <!-- Navbar Theme Wrapper -->
+  <!-- Nav Wrap -->
   <div class="wrapper">
     <nav>
       <ng-content
@@ -66,18 +65,18 @@
       </ul>
     </div>
   </div>
-  <!-- Dropdown -->
+  <!-- Dropdown Menu -->
   <div
     class="ellipsis-container"
     (mouseenter)="toggleDropdown()"
     (mouseleave)="hideDropdown()"
   >
-    <div class="ellipsis ellipsis-background">
+    <div class="ellipsis">
       <div [ngClass]="{ 'theme-dark': isDarkMode }"></div>
       <div [ngClass]="{ 'theme-dark': isDarkMode }"></div>
       <div [ngClass]="{ 'theme-dark': isDarkMode }"></div>
     </div>
-    <!-- Dropdown Content -->
+    <!-- Menu Content -->
     <div
       class="dropdown-content"
       *ngIf="showDropdown"

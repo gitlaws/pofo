@@ -111,7 +111,7 @@
       height: 6px;
       background-color: #333;
       border-radius: 25%;
-      @include bounce-animation(5s, ease-in-out, infinite);
+      @include bounce-animation(3.75s, ease-in-out, infinite);
 
       &.theme-dark {
         background-color: #aaa; // color for dark mode

@@ -103,12 +103,12 @@
     .ellipsis {
       display: flex;
       justify-content: space-between;
-      width: 36px;
+      width: 28px;
     }
 
     .ellipsis div {
-      width: 10px;
-      height: 10px;
+      width: 6px;
+      height: 6px;
       background-color: #333;
       border-radius: 25%;
       @include bounce-animation(5s, ease-in-out, infinite);

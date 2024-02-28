@@ -26,4 +26,11 @@ export class ThemeToggleComponent implements OnInit {
       this.isAnimated = false;
     }, 500); // Remove the class after the duration of the animation
   }
+
+  toggleLogo() {
+    const logo = document.getElementById('logo') as HTMLImageElement;
+    logo.src = logo.src.includes('slogo')
+      ? 'assets/alternateLogo.png'
+      : 'assets/slogo.png';
+  }
 }

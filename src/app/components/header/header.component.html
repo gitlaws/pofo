@@ -1,7 +1,7 @@
 <header class="navbar-container" [ngClass]="currentTheme">
   <!-- Logo -->
   <a href="javascript:void(0)" class="navbar-logo">
-    <img id="logo" src="assets/slogo.png" />
+    <img id="logo" src="assets/slogo36px1.png" />
   </a>
   <!-- <div class="navbar-logo-background">
     <a href="javascript:void(0)" class="navbar-logo">
@@ -67,48 +67,48 @@
   </div>
 
   <!-- Marcin -->
-  <div class="parent-container">
-    <img class="background-image" src="assets/fpicon.png" />
-    <!-- Ellipsis -->
-    <div
-      class="ellipsis-container"
-      (mouseenter)="toggleDropdown()"
-      (mouseleave)="hideDropdown()"
-    >
-      <div class="ellipsis">
-        <div [ngClass]="{ 'theme-dark': isDarkMode }"></div>
-        <div [ngClass]="{ 'theme-dark': isDarkMode }"></div>
-        <div [ngClass]="{ 'theme-dark': isDarkMode }"></div>
-      </div>
-      <!-- Dropmenu -->
-      <div
-        class="dropdown-content"
-        *ngIf="showDropdown"
-        [ngClass]="{ 'theme-dark': isDarkMode }"
-      >
-        <!-- Links -->
-        <a href="javascript:void(0)">Item 1</a>
-        <a href="javascript:void(0)">Item 2</a>
-        <!-- Theme Toggle Button -->
-        <app-theme-toggle class="dropdown-theme-toggle"></app-theme-toggle>
 
-        <!-- Social Links -->
-        <div class="dropmenu" [ngClass]="{ 'theme-dark': isDarkMode }">
-          <ul>
-            <li>
-              <a href=""><i class="fab fa-youtube" aria-hidden="true"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="fab fa-discord" aria-hidden="true"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="fab fa-github" aria-hidden="true"></i></a>
-            </li>
-          </ul>
-        </div>
+  <!-- Ellipsis -->
+  <div
+    class="ellipsis-container"
+    (mouseenter)="toggleDropdown()"
+    (mouseleave)="hideDropdown()"
+  >
+    <img class="background-image" src="assets/fpicon.png" />
+
+    <div class="ellipsis">
+      <div [ngClass]="{ 'theme-dark': isDarkMode }"></div>
+      <div [ngClass]="{ 'theme-dark': isDarkMode }"></div>
+      <div [ngClass]="{ 'theme-dark': isDarkMode }"></div>
+    </div>
+    <!-- Dropmenu -->
+    <div
+      class="dropdown-content"
+      *ngIf="showDropdown"
+      [ngClass]="{ 'theme-dark': isDarkMode }"
+    >
+      <!-- Links -->
+      <a href="javascript:void(0)">Item 1</a>
+      <a href="javascript:void(0)">Item 2</a>
+      <!-- Theme Toggle Button -->
+      <app-theme-toggle class="dropdown-theme-toggle"></app-theme-toggle>
+
+      <!-- Social Links -->
+      <div class="dropmenu" [ngClass]="{ 'theme-dark': isDarkMode }">
+        <ul>
+          <li>
+            <a href=""><i class="fab fa-youtube" aria-hidden="true"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fab fa-discord" aria-hidden="true"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fab fa-github" aria-hidden="true"></i></a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

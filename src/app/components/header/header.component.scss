@@ -91,6 +91,20 @@
     }
   }
 
+  .parent-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url("/src/assets/opsight.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  // .parent-container .background-image {
+  //   // display: none;
+  // }
+
   // Ellipsis
   .ellipsis-container {
     position: relative;

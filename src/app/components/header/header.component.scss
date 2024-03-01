@@ -7,6 +7,7 @@
   justify-content: space-around;
   position: relative;
   z-index: 2;
+  background-color: transparent;
 
   .navbar-logo-background {
     display: flex;
@@ -91,25 +92,6 @@
     }
   }
 
-  .background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // align-self: center;
-    // width: 48px;
-    // height: 48px;
-    border-radius: 50%;
-    transition: background-color 0.3s ease;
-  }
-
   // Ellipsis
   .ellipsis-container {
     position: relative;
@@ -118,6 +100,7 @@
     justify-content: center;
     align-items: center;
     align-self: center;
+    z-index: 1;
 
     .ellipsis {
       position: relative;
@@ -262,6 +245,18 @@
         // transition-delay: 2s;
       }
     }
+  }
+
+  .ellipsis-container .titan-image {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
   }
 
   @media (max-width: $mobile) {

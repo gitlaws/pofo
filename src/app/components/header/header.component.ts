@@ -1,4 +1,11 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  Renderer2,
+  ElementRef,
+  HostBinding,
+} from '@angular/core';
 import { ThemeService } from 'src/app/services/theme.service';
 import { Theme } from 'src/app/services/theme.enum';
 import { Subject } from 'rxjs';
@@ -12,22 +19,22 @@ import { takeUntil } from 'rxjs/operators';
 export class HeaderComponent implements OnInit, OnDestroy {
   currentTheme: string = '';
   showDropdown = false;
-  hideDropdownTimeout: any;
   isDarkMode: boolean = false;
+
+  @HostBinding('class.open') get isOpen() {
+    return this.showDropdown;
+  }
 
   private unsubscribe$ = new Subject<void>();
 
-  constructor(private themeService: ThemeService) {}
+  constructor(
+    private themeService: ThemeService,
+    private renderer: Renderer2,
+    private el: ElementRef
+  ) {}
 
   toggleDropdown() {
-    clearTimeout(this.hideDropdownTimeout); // clear the timeout
-    this.showDropdown = true;
-  }
-
-  hideDropdown() {
-    this.hideDropdownTimeout = setTimeout(() => {
-      this.showDropdown = false;
-    }, 3000); // 3000 milliseconds = 3 seconds
+    this.showDropdown = !this.showDropdown;
   }
 
   ngOnInit(): void {
@@ -39,7 +46,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.unsubscribe$.next();
-    this.unsubscribe$.complete();
+    this.unsubscribe$.unsubscribe();
   }
 }

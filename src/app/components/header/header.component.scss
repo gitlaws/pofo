@@ -235,14 +235,14 @@
       }
     }
 
-    &:hover {
-      .dropdown-content {
-        display: flex;
-        transform: translateY(0);
-        opacity: 1;
-        // transition-delay: 2s;
-      }
-    }
+    // &:hover {
+    //   .dropdown-content {
+    //     display: flex;
+    //     transform: translateY(0);
+    //     opacity: 1;
+    //     // transition-delay: 2s;
+    //   }
+    // }
   }
 
   .ellipsis-container .crosshair-image {

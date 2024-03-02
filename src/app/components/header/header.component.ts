@@ -5,6 +5,7 @@ import {
   Renderer2,
   ElementRef,
   HostBinding,
+  Input,
 } from '@angular/core';
 import { ThemeService } from 'src/app/services/theme.service';
 import { Theme } from 'src/app/services/theme.enum';
@@ -17,9 +18,10 @@ import { takeUntil } from 'rxjs/operators';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-  currentTheme: string = '';
-  showDropdown = false;
+  @Input() links: string[] = [];
+  isOpen = false;
   isDarkMode: boolean = false;
+  currentTheme: string = '';
 
   private unsubscribe$ = new Subject<void>();
 
@@ -30,9 +32,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ) {}
 
   toggleDropdown() {
-    console.log('toggleDropdown method called'); // This will log when the method is called
-    this.showDropdown = !this.showDropdown;
-    console.log('showDropdown value is', this.showDropdown); // This will log the updated value of showDropdown
+    this.isOpen = !this.isOpen;
   }
 
   ngOnInit(): void {

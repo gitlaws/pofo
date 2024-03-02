@@ -31,9 +31,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
     private el: ElementRef
   ) {}
 
-  toggleDropdown() {
-    this.isOpen = !this.isOpen;
-  }
+  // toggleDropdown() {
+  //   this.isOpen = !this.isOpen;
+  // }
 
   ngOnInit(): void {
     this.themeService.currentTheme

@@ -5,4 +5,12 @@ import { Component } from '@angular/core';
   templateUrl: './toolmenu.component.html',
   styleUrl: './toolmenu.component.scss',
 })
-export class ToolmenuComponent {}
+export class ToolmenuComponent {
+  isOpen = false;
+  isDarkMode: boolean = false;
+  currentTheme: string = '';
+
+  toggleDropdown() {
+    this.isOpen = !this.isOpen;
+  }
+}

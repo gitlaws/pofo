@@ -1,4 +1,7 @@
-// Ellipsis
+@import "src/styles/_colors";
+@import "src/styles/_mixins";
+@import "src/styles/_variables";
+
 .ellipsis-container {
   position: relative;
   cursor: pointer;
@@ -144,4 +147,29 @@
   z-index: 0;
   transition: background-color 0.3s ease;
   pointer-events: none;
+}
+
+@media (max-width: $mobile) {
+  .ellipsis-container {
+    display: block;
+    position: relative; // Add this to make .crosshair-image position relative to this container
+  }
+
+  .ellipsis-container .crosshair-image {
+    position: absolute;
+    top: 50%; // Center vertically
+    left: 50%; // Center horizontally
+    transform: translate(
+      -50%,
+      -50%
+    ); // Offset the image by half its height and width
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+  }
 }

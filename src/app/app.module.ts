@@ -9,6 +9,8 @@ import { ComponentDocumentationComponent } from './components/component-document
 import { HeaderComponent } from './components/header/header.component';
 import { GridPanelComponent } from './components/grid-panel/grid-panel.component';
 import { MainSectionComponent } from './components/main-section/main-section.component';
+import { ToolmenuComponent } from './components/toolmenu/toolmenu.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,13 +18,11 @@ import { MainSectionComponent } from './components/main-section/main-section.com
     ComponentDocumentationComponent,
     HeaderComponent,
     GridPanelComponent,
-    MainSectionComponent
+    MainSectionComponent,
+    ToolmenuComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

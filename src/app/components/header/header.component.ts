@@ -21,10 +21,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   showDropdown = false;
   isDarkMode: boolean = false;
 
-  @HostBinding('class.open') get isOpen() {
-    return this.showDropdown;
-  }
-
   private unsubscribe$ = new Subject<void>();
 
   constructor(
@@ -34,7 +30,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ) {}
 
   toggleDropdown() {
+    console.log('toggleDropdown method called'); // This will log when the method is called
     this.showDropdown = !this.showDropdown;
+    console.log('showDropdown value is', this.showDropdown); // This will log the updated value of showDropdown
   }
 
   ngOnInit(): void {

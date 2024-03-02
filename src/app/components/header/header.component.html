@@ -74,7 +74,7 @@
     <!-- Dropmenu -->
     <div
       class="dropdown-content"
-      *ngIf="showDropdown"
+      [class.open]="showDropdown"
       [ngClass]="{ 'theme-dark': isDarkMode }"
     >
       <!-- Links -->

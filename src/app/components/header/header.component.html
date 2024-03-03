@@ -1,11 +1,12 @@
-<header class="navbar-container" [ngClass]="currentTheme">
+<header class="nav-container" [ngClass]="currentTheme">
   <!-- Logo -->
-  <a href="/" class="navbar-logo">
+  <a href="/" class="nav-logo">
     <img id="logo" src="assets/slogo36px1.png" alt="Logo" />
   </a>
-  <!-- NAVBAR CONTENT -->
+  <!-- NAV CONTENT -->
+  <app-theme-toggle class="nav-theme-toggle"></app-theme-toggle>
 
-  <div class="dropdown">
+  <div class="nav-menu">
     <app-menu></app-menu>
   </div>
 </header>

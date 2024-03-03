@@ -4,20 +4,8 @@
     <img id="logo" src="assets/slogo36px1.png" alt="Logo" />
   </a>
   <!-- NAVBAR CONTENT -->
-  <div class="navbar-content">
-    <!-- Theme Button, Social Links, and Drop Menu -->
-    <nav aria-label="Main navigation">
-      <div class="navbar-theme-toggle">
-        <ng-content select="app-theme-toggle"></ng-content>
-      </div>
 
-      <div class="navbar-social-links">
-        <ng-content select="app-social-links"></ng-content>
-      </div>
-
-      <div aria-label="Tool menu">
-        <ng-content select="app-toolmenu"></ng-content>
-      </div>
-    </nav>
+  <div class="dropdown">
+    <app-menu></app-menu>
   </div>
 </header>

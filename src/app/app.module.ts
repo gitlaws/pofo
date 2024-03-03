@@ -9,7 +9,7 @@ import { ComponentDocumentationComponent } from './components/component-document
 import { HeaderComponent } from './components/header/header.component';
 import { GridPanelComponent } from './components/grid-panel/grid-panel.component';
 import { MainSectionComponent } from './components/main-section/main-section.component';
-import { ToolmenuComponent } from './components/toolmenu/toolmenu.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { ToolmenuComponent } from './components/toolmenu/toolmenu.component';
     HeaderComponent,
     GridPanelComponent,
     MainSectionComponent,
-    ToolmenuComponent,
+    MenuComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

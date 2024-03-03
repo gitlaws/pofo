@@ -1,32 +1,23 @@
 <header class="navbar-container" [ngClass]="currentTheme">
   <!-- Logo -->
-  <a href="javascript:void(0)" class="navbar-logo">
-    <img id="logo" src="assets/slogo36px1.png" />
+  <a href="/" class="navbar-logo">
+    <img id="logo" src="assets/slogo36px1.png" alt="Logo" />
   </a>
+  <!-- NAVBAR CONTENT -->
+  <div class="navbar-content">
+    <!-- Theme Button, Social Links, and Drop Menu -->
+    <nav aria-label="Main navigation">
+      <div class="navbar-theme-toggle">
+        <ng-content select="app-theme-toggle"></ng-content>
+      </div>
 
-  <!-- B WRAP -->
-  <div class="wrapper">
-    <!-- Theme Button -->
-    <nav>
-      <ng-content
-        class="navbar-theme-toggle"
-        select="app-theme-toggle"
-        aria-haspopup="true"
-        aria-expanded="false"
-      ></ng-content>
+      <div class="navbar-social-links">
+        <ng-content select="app-social-links"></ng-content>
+      </div>
+
+      <div aria-label="Tool menu">
+        <ng-content select="app-toolmenu"></ng-content>
+      </div>
     </nav>
-
-    <!-- Social Links NG Content -->
-    <div>
-      <ng-content
-        class="navbar-social-links"
-        select="app-social-links"
-        aria-haspopup="true"
-        aria-expanded="false"
-      ></ng-content>
-    </div>
   </div>
-
-  <!-- Tool Menu -->
-  <app-toolmenu></app-toolmenu>
 </header>

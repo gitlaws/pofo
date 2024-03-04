@@ -1,0 +1,75 @@
+.ellipsis-container {
+  position: relative;
+  cursor: pointer;
+  display: none; //flex or none
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  z-index: 0;
+
+  .ellipsis {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 28px;
+  }
+
+  .ellipsis div {
+    width: 6px;
+    height: 6px;
+    background-color: #333;
+    border-radius: 50%;
+    @include bounce-animation(3.75s, ease-in-out, infinite);
+
+    &.theme-dark {
+      background-color: #aaa; // color for dark mode
+    }
+  }
+
+  .ellipsis div:nth-child(1) {
+    animation-delay: -0.32s;
+  }
+
+  .ellipsis div:nth-child(2) {
+    animation-delay: -0.16s;
+  }
+
+  .ellipsis-container .crosshair-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    z-index: 0;
+    transition: background-color 0.3s ease;
+    pointer-events: none;
+
+    @media (max-width: $mobile) {
+      .ellipsis-container {
+        display: block;
+        position: relative; // Add this to make .crosshair-image position relative to this container
+      }
+
+      .ellipsis-container .crosshair-image {
+        position: absolute;
+        top: 50%; // Center vertically
+        left: 50%; // Center horizontally
+        transform: translate(
+          -50%,
+          -50%
+        ); // Offset the image by half its height and width
+        width: 48px;
+        height: 48px;
+        object-fit: cover;
+        z-index: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s ease;
+      }
+    }
+  }
+}

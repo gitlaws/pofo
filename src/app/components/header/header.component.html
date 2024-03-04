@@ -4,9 +4,9 @@
     <img id="logo" src="assets/slogo36px1.png" alt="Logo" />
   </a>
   <!-- Theme Toggle Component -->
-  <app-theme-toggle class="nav-theme-toggle"></app-theme-toggle>
-  <!-- Navigation Menu Component -->
-  <app-menu class="nav-menu"></app-menu>
+  <!-- <app-theme-toggle class="nav-theme-toggle"></app-theme-toggle> -->
+
   <!-- Ellipsis Nav Component -->
-  <app-ellipsis class="nav-ellipsis"></app-ellipsis>
+  <app-ellipsis (click)="toggleMenu()"></app-ellipsis>
+  <app-menu *ngIf="menuVisible"></app-menu>
 </header>

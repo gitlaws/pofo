@@ -22,6 +22,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   isOpen = false;
   isDarkMode: boolean = false;
   currentTheme: string = '';
+  menuVisible = false;
 
   private unsubscribe$ = new Subject<void>();
 
@@ -34,6 +35,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
   // toggleDropdown() {
   //   this.isOpen = !this.isOpen;
   // }
+
+  toggleMenu() {
+    this.menuVisible = !this.menuVisible;
+  }
 
   ngOnInit(): void {
     this.themeService.currentTheme

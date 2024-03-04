@@ -10,6 +10,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { GridPanelComponent } from './components/grid-panel/grid-panel.component';
 import { MainSectionComponent } from './components/main-section/main-section.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { EllipsisComponent } from './components/ellipsis/ellipsis.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MenuComponent } from './components/menu/menu.component';
     GridPanelComponent,
     MainSectionComponent,
     MenuComponent,
+    EllipsisComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

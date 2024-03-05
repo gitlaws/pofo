@@ -1,12 +1,4 @@
-import {
-  Component,
-  OnInit,
-  OnDestroy,
-  Renderer2,
-  ElementRef,
-  HostBinding,
-  Input,
-} from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { ThemeService } from 'src/app/services/theme.service';
 import { Theme } from 'src/app/services/theme.enum';
 import { Subject } from 'rxjs';
@@ -18,26 +10,12 @@ import { takeUntil } from 'rxjs/operators';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-  @Input() links: string[] = [];
-  isOpen = false;
   isDarkMode: boolean = false;
   currentTheme: string = '';
 
   private unsubscribe$ = new Subject<void>();
 
-  constructor(
-    private themeService: ThemeService,
-    private renderer: Renderer2,
-    private el: ElementRef
-  ) {}
-
-  // toggleDropdown() {
-  //   this.isOpen = !this.isOpen;
-  // }
-
-  toggleMenu() {
-    this.isOpen = !this.isOpen;
-  }
+  constructor(private themeService: ThemeService) {}
 
   ngOnInit(): void {
     this.themeService.currentTheme
@@ -48,6 +26,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.unsubscribe$.next();
     this.unsubscribe$.unsubscribe();
   }
 }

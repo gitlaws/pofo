@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1; // Lowered z-index
+  z-index: 1;
 
   .crosshair-image {
     position: absolute;
@@ -25,22 +25,21 @@
     justify-content: space-between;
     width: 28px;
     position: relative;
-    z-index: 2; // Lowered z-index
+    z-index: 2;
 
     div {
       width: 6px;
       height: 6px;
-      // background-color: #fefbfb;
       border-radius: 25%;
       margin: 2px;
       @include bounce-animation(3.75s, ease-in-out, infinite);
 
       &.theme-light {
-        background-color: #fefbfb; // color for dark mode
+        background-color: #fefbfb;
       }
 
       &.theme-dark {
-        background-color: #aaa; // color for dark mode
+        background-color: #aaa;
       }
     }
   }
@@ -67,7 +66,7 @@
         justify-content: space-between;
         width: 28px;
         position: relative;
-        z-index: 2; // Lowered z-index
+        z-index: 2;
       }
     }
   }

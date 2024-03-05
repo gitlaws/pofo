@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-menu',
@@ -6,11 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './menu.component.scss',
 })
 export class MenuComponent {
-  isOpen = false;
   isDarkMode: boolean = false;
-  currentTheme: string = '';
 
-  toggleDropdown() {
-    this.isOpen = !this.isOpen;
-  }
+  @Input() isOpen: boolean = false;
 }

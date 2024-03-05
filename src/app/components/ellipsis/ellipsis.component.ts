@@ -20,7 +20,7 @@ import { takeUntil } from 'rxjs/operators';
 export class EllipsisComponent {
   currentTheme: string = '';
   isDarkMode: boolean = false;
-  isMenuOpen = false;
+  isOpen = false;
 
   private unsubscribe$ = new Subject<void>();
 
@@ -42,6 +42,6 @@ export class EllipsisComponent {
   }
 
   toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
+    this.isOpen = !this.isOpen;
   }
 }

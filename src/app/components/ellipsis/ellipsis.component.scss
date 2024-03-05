@@ -20,10 +20,18 @@
     div {
       width: 6px;
       height: 6px;
-      background-color: #fefbfb;
+      // background-color: #fefbfb;
       border-radius: 25%;
       margin: 2px;
       @include bounce-animation(3.75s, ease-in-out, infinite);
+
+      &.theme-light {
+        background-color: #fefbfb; // color for dark mode
+      }
+
+      &.theme-dark {
+        background-color: #aaa; // color for dark mode
+      }
     }
   }
 

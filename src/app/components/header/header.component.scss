@@ -12,6 +12,11 @@
   display: none;
 }
 
+.nav-items {
+  display: flex;
+  justify-content: space-between;
+}
+
 @media (max-width: $mobile) {
   .nav-container {
     // flex-direction: column;

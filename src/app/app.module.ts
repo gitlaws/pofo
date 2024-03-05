@@ -11,6 +11,7 @@ import { GridPanelComponent } from './components/grid-panel/grid-panel.component
 import { MainSectionComponent } from './components/main-section/main-section.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { EllipsisComponent } from './components/ellipsis/ellipsis.component';
+import { SocialLinksComponent } from './components/social-links/social-links.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { EllipsisComponent } from './components/ellipsis/ellipsis.component';
     MainSectionComponent,
     MenuComponent,
     EllipsisComponent,
+    SocialLinksComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

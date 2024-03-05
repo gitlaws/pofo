@@ -10,6 +10,16 @@
   align-items: center;
   z-index: 1; // Lowered z-index
 
+  .crosshair-image {
+    position: absolute;
+    z-index: 2;
+    width: 36px; /* Adjust as needed */
+    height: 36px; /* Adjust as needed */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
   .ellipsis {
     display: flex;
     justify-content: space-between;
@@ -59,30 +69,6 @@
         position: relative;
         z-index: 2; // Lowered z-index
       }
-
-      .crosshair-image {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 20px;
-        height: 20px;
-        object-fit: cover;
-        z-index: 0; // Lowered z-index
-        transition: background-color 0.3s ease;
-      }
     }
-  }
-
-  .crosshair-image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 20px;
-    height: 20px;
-    object-fit: cover;
-    z-index: 0; // Lowered z-index
-    transition: background-color 0.3s ease;
   }
 }

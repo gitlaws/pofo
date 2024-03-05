@@ -1,19 +1,17 @@
 <header class="nav-container" [ngClass]="currentTheme">
   <!-- Logo Link -->
   <a href="/" class="nav-logo">
-    <img id="logo" src="assets/slogo36px1.png" alt="Logo" />
+    <img id="logo" src="assets/slogo36px1.png" alt="Slogo" />
   </a>
 
-  <div class="nav-items">
-    <!-- Theme Toggle Component -->
+  <nav class="nav-items">
+    <!-- Nav Theme Toggle Component -->
     <app-theme-toggle class="nav-theme-toggle"></app-theme-toggle>
 
-    <!-- Nav Social Links -->
+    <!-- Nav Social Links Component -->
     <app-social-links class="nav-social-links"></app-social-links>
-  </div>
+  </nav>
 
-  <!-- Ellipsis Nav Component -->
+  <!-- Nav Ellipsis Component -->
   <app-ellipsis class="nav-ellipsis"></app-ellipsis>
-  <!-- <app-ellipsis (click)="toggleMenu()"></app-ellipsis>
-  <app-menu *ngIf="menuVisible"></app-menu> -->
 </header>

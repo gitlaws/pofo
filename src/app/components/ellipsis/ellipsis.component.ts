@@ -20,6 +20,7 @@ import { takeUntil } from 'rxjs/operators';
 export class EllipsisComponent {
   currentTheme: string = '';
   isDarkMode: boolean = false;
+  isMenuOpen = false;
 
   private unsubscribe$ = new Subject<void>();
 
@@ -38,5 +39,9 @@ export class EllipsisComponent {
 
   ngOnDestroy(): void {
     this.unsubscribe$.unsubscribe();
+  }
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
   }
 }

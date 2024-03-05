@@ -1,6 +1,6 @@
-<img class="crosshair-image" src="assets/titan.png" />
+<!-- <img class="crosshair-image" src="assets/titan.png" /> -->
 
-<div class="ellipsis-container">
+<div class="ellipsis-container" (click)="toggleMenu()">
   <div class="ellipsis">
     <div [class.theme-dark]="isDarkMode"></div>
     <div [class.theme-dark]="isDarkMode"></div>
@@ -8,4 +8,8 @@
   </div>
 </div>
 
-
+<div class="dropdown-menu" *ngIf="isMenuOpen">
+  <a href="#">Link 1</a>
+  <a href="#">Link 2</a>
+  <a href="#">Link 3</a>
+</div>

@@ -8,23 +8,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
+  z-index: 1; // Lowered z-index
 
   .ellipsis {
     display: flex;
     justify-content: space-between;
     width: 28px;
-  }
+    position: relative;
+    z-index: 2; // Lowered z-index
 
-  .ellipsis div {
-    width: 6px;
-    height: 6px;
-    background-color: #333;
-    border-radius: 50%;
-    @include bounce-animation(3.75s, ease-in-out, infinite);
-
-    &.theme-dark {
-      background-color: #aaa; // color for dark mode
+    div {
+      width: 6px;
+      height: 6px;
+      background-color: #fefbfb;
+      border-radius: 25%;
+      margin: 2px;
+      @include bounce-animation(3.75s, ease-in-out, infinite);
     }
   }
 
@@ -36,33 +35,46 @@
     animation-delay: -0.16s;
   }
 
+  @media (max-width: $mobile) {
+    .ellipsis-container {
+      display: flex;
+      position: relative;
+      cursor: pointer;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+
+      .ellipsis {
+        display: flex;
+        justify-content: space-between;
+        width: 28px;
+        position: relative;
+        z-index: 2; // Lowered z-index
+      }
+
+      .crosshair-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 20px;
+        height: 20px;
+        object-fit: cover;
+        z-index: 0; // Lowered z-index
+        transition: background-color 0.3s ease;
+      }
+    }
+  }
+
   .crosshair-image {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     object-fit: cover;
-    z-index: 2; // Updated z-index
-    transition: background-color 0.3s ease;
-  }
-}
-
-@media (max-width: $mobile) {
-  .ellipsis-container {
-    display: flex;
-  }
-
-  .crosshair-image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 30px;
-    height: 30px;
-    object-fit: cover;
-    z-index: 2; // Updated z-index
+    z-index: 0; // Lowered z-index
     transition: background-color 0.3s ease;
   }
 }

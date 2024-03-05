@@ -10,6 +10,20 @@
   align-items: center;
   z-index: 1;
 
+  // .crosshair-image {
+  //   position: absolute;
+  //   z-index: 2;
+  //   width: 36px; /* Adjust as needed */
+  //   height: 36px; /* Adjust as needed */
+  //   top: 50%;
+  //   left: 50%;
+  //   transform: translate(-50%, -50%);
+  //   opacity: 0; /* Hide the image by default */
+  //   transition: opacity 0.3s ease; /* Smooth transition
+  //   */
+
+  // }
+
   .crosshair-image {
     position: absolute;
     z-index: 2;
@@ -18,6 +32,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: none; /* Hide the image by default */
   }
 
   .ellipsis {
@@ -26,6 +41,10 @@
     width: 28px;
     position: relative;
     z-index: 2;
+
+    &:hover ~ .crosshair-image {
+      display: block; /* Show the image on hover */
+    }
 
     div {
       width: 6px;

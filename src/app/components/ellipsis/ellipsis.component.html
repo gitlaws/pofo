@@ -1,9 +1,9 @@
-<div class="ellipsis-container" (click)="toggleMenu()">
-  <img class="crosshair-image" src="assets/titan.png" />
+<div class="ellipsis-container">
   <div class="ellipsis">
     <div [class.theme-dark]="isDarkMode"></div>
     <div [class.theme-dark]="isDarkMode"></div>
     <div [class.theme-dark]="isDarkMode"></div>
   </div>
-  <app-menu [isOpen]="isOpen"></app-menu>
+  <img class="crosshair-image" src="assets/titan.png" />
+  <app-menu [isOpen]="isOpen" (click)="toggleMenu()"></app-menu>
 </div>

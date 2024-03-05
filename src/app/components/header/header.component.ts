@@ -22,7 +22,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   isOpen = false;
   isDarkMode: boolean = false;
   currentTheme: string = '';
-  menuVisible = false;
 
   private unsubscribe$ = new Subject<void>();
 

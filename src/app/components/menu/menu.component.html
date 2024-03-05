@@ -1,5 +1,5 @@
 <div
-  class="down-menu"
+  class="menu"
   [class.open]="isOpen"
   [ngClass]="{ 'theme-dark': isDarkMode }"
 >
@@ -8,10 +8,10 @@
   <a href="your-item-2-url" aria-label="Item 2">Item 2</a>
 
   <!-- Theme Toggle Button -->
-  <app-theme-toggle class="down-menu-theme-toggle"></app-theme-toggle>
+  <app-theme-toggle class="menu-theme-toggle"></app-theme-toggle>
 
   <!-- Social Links -->
-  <div class="down-menu-social-links">
+  <div class="menu-social-links">
     <ng-content select="app-social-links"></ng-content>
   </div>
 </div>

@@ -37,7 +37,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   // }
 
   toggleMenu() {
-    this.menuVisible = !this.menuVisible;
+    this.isOpen = !this.isOpen;
   }
 
   ngOnInit(): void {

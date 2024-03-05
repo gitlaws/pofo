@@ -43,5 +43,6 @@ export class EllipsisComponent {
 
   toggleMenu() {
     this.isOpen = !this.isOpen;
+    console.log('Menu status:', this.isOpen); // This will log the status of isOpen in the console
   }
 }

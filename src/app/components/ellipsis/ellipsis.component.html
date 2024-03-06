@@ -5,7 +5,7 @@
     <div [class.theme-dark]="isDarkMode"></div>
   </div>
   <img class="crosshair-image" src="assets/titan.png" />
-  <app-menu *ngIf="isMenuOpen"></app-menu>
+  <app-menu *ngIf="isMenuOpen" [isDarkMode]="isDarkMode"></app-menu>
   <button
     class="menu-button"
     [class.active]="isMenuOpen"

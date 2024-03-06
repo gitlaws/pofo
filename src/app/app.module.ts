@@ -25,6 +25,7 @@ import { SocialLinksComponent } from './components/social-links/social-links.com
     EllipsisComponent,
     SocialLinksComponent,
   ],
+  exports: [MenuComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -2,13 +2,19 @@
 @import "src/styles/_mixins";
 @import "src/styles/_variables";
 
+.crosshair-image {
+  width: 100px;
+  height: auto;
+  cursor: crosshair;
+}
+
 .ellipsis-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
-  cursor: pointer;
+  // cursor: pointer;
 }
 
 .ellipsis {

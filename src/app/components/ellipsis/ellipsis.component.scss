@@ -2,25 +2,28 @@
 @import "src/styles/_mixins";
 @import "src/styles/_variables";
 
-.crosshair-image {
-  width: 100px;
-  height: auto;
-  cursor: crosshair;
-}
-
 .ellipsis-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
-  // cursor: pointer;
+  position: relative;
+  cursor: crosshair;
+}
+
+.crosshair-image {
+  width: 100px;
+  height: auto;
+  cursor: crosshair;
 }
 
 .ellipsis {
   display: flex;
   justify-content: space-between;
   width: 50px;
+  position: absolute;
+  z-index: 2;
 
   div {
     width: 10px;
@@ -51,5 +54,10 @@
 
   div.clicked {
     background-color: #00ff00;
+  }
+
+  app-menu {
+    position: absolute;
+    z-index: 3;
   }
 }

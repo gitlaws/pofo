@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-menu',
@@ -7,6 +7,4 @@ import { Component, Input } from '@angular/core';
 })
 export class MenuComponent {
   isDarkMode: boolean = false;
-
-  @Input() isOpen: boolean = false;
 }

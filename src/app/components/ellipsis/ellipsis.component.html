@@ -5,5 +5,6 @@
     <div [class.theme-dark]="isDarkMode"></div>
   </div>
   <img class="crosshair-image" src="assets/titan.png" />
-  <app-menu [isOpen]="isOpen" (click)="toggleMenu()"></app-menu>
+  <app-menu *ngIf="isMenuOpen"></app-menu>
+  <button class="menu-toggle-button" (click)="toggleMenu()">_$</button>
 </div>

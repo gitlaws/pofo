@@ -39,7 +39,6 @@
     }
 
     div:nth-child(2):not(.clicked) {
-      
       @include flash-animation(0.2s);
     }
   }

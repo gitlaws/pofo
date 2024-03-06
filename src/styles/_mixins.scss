@@ -105,4 +105,13 @@
 ) {
   animation: bounce $duration $timing-function $iteration-count;
 }
-//
+
+
+@mixin flash-animation($time) {
+  animation: flash $time infinite;
+}
+
+@keyframes flash {
+  0%, 100% { background-color: transparent; }
+  50% { background-color: green; }
+}

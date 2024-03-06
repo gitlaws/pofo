@@ -8,8 +8,13 @@ import { Component } from '@angular/core';
 export class EllipsisComponent {
   isDarkMode: boolean = false;
   isMenuOpen = false;
+  isMiddleDivClicked = false;
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  toggleMiddleDiv() {
+    this.isMiddleDivClicked = !this.isMiddleDivClicked;
   }
 }

@@ -1,11 +1,12 @@
-<div class="ellipsis-container">
+<div class="ellipsis-container" (click)="toggleMiddleDiv()">
   <div class="ellipsis">
     <div [class.theme-dark]="isDarkMode"></div>
-    <div [class.theme-dark]="isDarkMode"></div>
+    <div [class.theme-dark]="isDarkMode" [class.clicked]="isMiddleDivClicked"></div>
     <div [class.theme-dark]="isDarkMode"></div>
   </div>
-  <img class="crosshair-image" src="assets/titan.png" />
-  <app-menu *ngIf="isMenuOpen" [isDarkMode]="isDarkMode"></app-menu>
+</div>
+  <!-- <img class="crosshair-image" src="assets/titan.png" /> -->
+  <!-- <app-menu *ngIf="isMenuOpen" [isDarkMode]="isDarkMode"></app-menu>
   <button
     class="menu-button"
     [class.active]="isMenuOpen"
@@ -13,5 +14,5 @@
     title="Open menu"
   >
     _$
-  </button>
-</div>
+  </button> -->
+

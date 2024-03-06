@@ -3,120 +3,43 @@
 @import "src/styles/_variables";
 
 .ellipsis-container {
-  position: relative;
-  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
-
-  .menu-button {
-    background-color: #ffcc00;
-    &.active {
-      background-color: #e6b800;
-      border: 2px solid #333;
-    }
-  }
-
-  .crosshair-image {
-    position: absolute;
-    z-index: 2;
-    width: 36px;
-    height: 36px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none; /* Hide the image by default */
-  }
-
-  .ellipsis {
-    display: flex;
-    justify-content: space-between;
-    width: 28px;
-    position: relative;
-    z-index: 2;
-
-    div {
-      width: 6px;
-      height: 6px;
-      border-radius: 25%;
-      margin: 2px;
-      @include bounce-animation(3.75s, ease-in-out, infinite);
-
-      &.theme-light {
-        background-color: #fefbfb;
-      }
-
-      &.theme-dark {
-        background-color: #aaa;
-      }
-    }
-  }
-
-  .ellipsis div:nth-child(1) {
-    animation-delay: -0.32s;
-  }
-
-  .ellipsis div:nth-child(2) {
-    animation-delay: -0.16s;
-  }
-
-  @media (max-width: $mobile) {
-    .ellipsis-container {
-      display: flex;
-      position: relative;
-      cursor: pointer;
-      justify-content: center;
-      align-items: center;
-
-      // .ellipsis {
-      //   display: flex;
-      //   justify-content: space-between;
-      //   width: 28px;
-      //   position: relative;
-      //   z-index: 2;
-      // }
-    }
-
-    .ellipsis,
-    .crosshair-image,
-    .menu-button {
-      position: absolute;
-    }
-
-    /* Additional styles to make the elements visible when superimposed */
-    .ellipsis {
-      z-index: 1;
-    }
-
-    .crosshair-image {
-      z-index: 2;
-    }
-
-    .menu-button {
-      z-index: 3;
-    }
-  }
-}
-
-.ellipsis,
-.crosshair-image,
-.menu-button {
-  position: absolute;
-}
-
-.ellipsis-container:hover .crosshair-image {
-  display: block; /* Show the image on hover */
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
 }
 
 .ellipsis {
-  z-index: 1;
-}
+  display: flex;
+  justify-content: space-between;
+  width: 50px;
 
-.crosshair-image {
-  z-index: 2;
-}
+  div {
+    width: 10px;
+    height: 10px;
+    border-radius: 25%;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+  }
 
-.menu-button {
-  z-index: 3;
+  div:nth-child(2) {
+    background-color: #fff;
+  }
+
+  div.theme-dark {
+    background-color: #aaa;
+  }
+
+  &:hover {
+    div:nth-child(2):not(.clicked) {
+      background-color: #00ff00;
+      @include flash-animation(0.2s);
+    }
+  }
+
+  div.clicked {
+    background-color: #ff0000; // Changes to red when clicked
+  }
 }

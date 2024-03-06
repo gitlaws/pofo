@@ -9,9 +9,10 @@ import { ComponentDocumentationComponent } from './components/component-document
 import { HeaderComponent } from './components/header/header.component';
 import { GridPanelComponent } from './components/grid-panel/grid-panel.component';
 import { MainSectionComponent } from './components/main-section/main-section.component';
-import { MenuComponent } from './components/menu/menu.component';
+
 import { EllipsisComponent } from './components/ellipsis/ellipsis.component';
 import { SocialLinksComponent } from './components/social-links/social-links.component';
+import { MenuModule } from './components/menu/menu.module';
 
 @NgModule({
   declarations: [
@@ -21,12 +22,11 @@ import { SocialLinksComponent } from './components/social-links/social-links.com
     HeaderComponent,
     GridPanelComponent,
     MainSectionComponent,
-    MenuComponent,
+
     EllipsisComponent,
     SocialLinksComponent,
   ],
-  exports: [MenuComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, MenuModule],
   providers: [],
   bootstrap: [AppComponent],
 })

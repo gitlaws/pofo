@@ -33,6 +33,11 @@
   }
 
   &:hover {
+    div:nth-child(1),
+    div:nth-child(3) {
+      background-color: #aaa; // Changes to #aaa when hovered
+    }
+
     div:nth-child(2):not(.clicked) {
       background-color: #00ff00;
       @include flash-animation(0.2s);

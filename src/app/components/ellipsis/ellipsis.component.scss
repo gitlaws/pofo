@@ -9,28 +9,28 @@
   align-items: center;
   position: relative;
   height: 100%;
-}
 
-.centered-container {
-  height: 100px; /* Adjust this value as needed */
-}
+  &.centered-container {
+    height: 100px; /* Adjust this value as needed */
+  }
 
-.ellipsis-container {
-  width: 100%;
-  cursor: crosshair;
+  &.ellipsis-container {
+    width: 100%;
+    cursor: crosshair;
+  }
 }
 
 .crosshair-image,
 app-menu {
   position: absolute;
-  z-index: 1; // Added z-index to control stacking order
+  z-index: 2; // Added z-index to control stacking order
   opacity: 0.5; // Added opacity to create a blending effect
-}
 
-.crosshair-image {
-  width: 100px;
-  height: auto;
-  cursor: crosshair;
+  &.crosshair-image {
+    width: 100px;
+    height: auto;
+    cursor: crosshair;
+  }
 }
 
 .ellipsis {
@@ -38,36 +38,33 @@ app-menu {
   justify-content: space-between;
   width: 50px;
   position: absolute;
-  z-index: 2; // Adjusted z-index to control stacking order
-}
+  z-index: 1; // Adjusted z-index to control stacking order
 
-.ellipsis div {
-  width: 10px;
-  height: 10px;
-  border-radius: 25%;
-  background-color: #fff;
-  transition: background-color 0.3s ease;
-}
+  div {
+    width: 10px;
+    height: 10px;
+    border-radius: 25%;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
 
-// .ellipsis div:nth-child(2),
-// .ellipsis div.theme-dark {
-//   // background-color: #aaa;
-// }
+    &.clicked {
+      background-color: #00ff00;
+    }
+  }
 
-.ellipsis div.clicked {
-  background-color: #00ff00;
-}
+  &:hover {
+    div:nth-child(1),
+    div:nth-child(3) {
+      background-color: #aaa;
+    }
 
-.ellipsis:hover div:nth-child(1),
-.ellipsis:hover div:nth-child(3) {
-  background-color: #aaa;
-}
+    div:nth-child(2):not(.clicked) {
+      animation: flash 0.2s infinite;
+    }
+  }
 
-.ellipsis:hover div:nth-child(2):not(.clicked) {
-  animation: flash 0.2s infinite;
-}
-
-.ellipsis app-menu {
-  position: absolute;
-  z-index: 3; // Adjusted z-index to control stacking order
+  // app-menu {
+  //   position: absolute;
+  //   z-index: 3; // Adjusted z-index to control stacking order
+  // }
 }

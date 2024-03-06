@@ -6,5 +6,12 @@
   </div>
   <img class="crosshair-image" src="assets/titan.png" />
   <app-menu *ngIf="isMenuOpen"></app-menu>
-  <button class="menu-button" (click)="toggleMenu()">_$</button>
+  <button
+    class="menu-button"
+    [class.active]="isMenuOpen"
+    (click)="toggleMenu()"
+    title="Open menu"
+  >
+    _$
+  </button>
 </div>

@@ -12,22 +12,17 @@
 
   .menu-button {
     background-color: #ffcc00;
+    &.active {
+      background-color: #e6b800;
+      border: 2px solid #333;
+    }
   }
-  // .crosshair-image {
-  //   position: absolute;
-  //   z-index: 2;
-  //   width: 36px; /* Adjust as needed */
-  //   height: 36px; /* Adjust as needed */
-  //   top: 50%;
-  //   left: 50%;
-  //   transform: translate(-50%, -50%);
-  // }
 
   .crosshair-image {
     position: absolute;
     z-index: 2;
-    width: 36px; /* Adjust as needed */
-    height: 36px; /* Adjust as needed */
+    width: 36px;
+    height: 36px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -40,10 +35,6 @@
     width: 28px;
     position: relative;
     z-index: 2;
-
-    &:hover ~ .crosshair-image {
-      display: block; /* Show the image on hover */
-    }
 
     div {
       width: 6px;
@@ -112,6 +103,10 @@
 .crosshair-image,
 .menu-button {
   position: absolute;
+}
+
+.ellipsis-container:hover .crosshair-image {
+  display: block; /* Show the image on hover */
 }
 
 .ellipsis {

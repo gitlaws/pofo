@@ -49,10 +49,10 @@ app-menu {
   transition: background-color 0.3s ease;
 }
 
-.ellipsis div:nth-child(2),
-.ellipsis div.theme-dark {
-  background-color: #aaa;
-}
+// .ellipsis div:nth-child(2),
+// .ellipsis div.theme-dark {
+//   // background-color: #aaa;
+// }
 
 .ellipsis div.clicked {
   background-color: #00ff00;

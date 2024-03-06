@@ -39,12 +39,12 @@
     }
 
     div:nth-child(2):not(.clicked) {
-      background-color: #00ff00;
+      
       @include flash-animation(0.2s);
     }
   }
 
   div.clicked {
-    background-color: #ff0000; // Changes to red when clicked
+    background-color: #00ff00;
   }
 }

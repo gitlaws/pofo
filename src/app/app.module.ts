@@ -22,12 +22,11 @@ import { MenuModule } from './components/menu/menu.module';
     HeaderComponent,
     GridPanelComponent,
     MainSectionComponent,
-
     EllipsisComponent,
     SocialLinksComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, MenuModule],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent, EllipsisComponent],
 })
 export class AppModule {}

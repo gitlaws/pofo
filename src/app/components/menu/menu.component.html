@@ -1,13 +1,31 @@
-<div class="menu" [ngClass]="{ 'theme-dark': isDarkMode }">
-  <!-- Links -->
-  <a href="your-item-1-url" aria-label="Item 1">Item 1</a>
-  <a href="your-item-2-url" aria-label="Item 2">Item 2</a>
+<div class="dropdown">
+  <button
+    class="btn btn-secondary dropdown-toggle"
+    type="button"
+    id="menuButton"
+    (click)="toggleMenu()"
+    aria-haspopup="true"
+    [attr.aria-expanded]="isMenuOpen ? 'true' : 'false'"
+    aria-label="Toggle Menu"
+  >
+    Menu
+  </button>
+  <div
+    class="dropdown-menu"
+    *ngIf="isMenuOpen"
+    [ngClass]="{ 'theme-dark': isDarkMode }"
+  >
+    <!-- Links -->
+    <a class="dropdown-item" [href]="item1Url" aria-label="Navigate to Item 1"
+      >Item 1</a
+    >
+    <a class="dropdown-item" [href]="item2Url" aria-label="Navigate to Item 2"
+      >Item 2</a
+    >
 
-  <!-- Theme Toggle Button -->
-  <!-- <app-theme-toggle class="menu-theme-toggle"></app-theme-toggle> -->
-
-  <!-- Social Links -->
-  <div class="menu-social-links">
-    <ng-content select="app-social-links"></ng-content>
+    <!-- Social Links -->
+    <div class="menu-social-links">
+      <ng-content select="app-social-links"></ng-content>
+    </div>
   </div>
 </div>

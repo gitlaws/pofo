@@ -2,29 +2,20 @@
 @import "src/styles/_mixins";
 @import "src/styles/_variables";
 
-.centered-container,
 .ellipsis-container {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  height: 100%;
-  opacity: 0.5; // Added opacity to create a blending effect
-}
-
-.centered-container {
-  height: 100px; /* Adjust this value as needed */
-}
-
-.ellipsis-container {
+  height: 100px;
   width: 100%;
+  opacity: 0.5;
 }
 
-.crosshair-image,
 app-menu {
   position: absolute;
-  z-index: 1; // Added z-index to control stacking order
-  opacity: 0.5; // Added opacity to create a blending effect
+  z-index: 1;
+  opacity: 0.5;
 }
 
 .crosshair-image {
@@ -37,7 +28,7 @@ app-menu {
   justify-content: space-between;
   width: 50px;
   position: absolute;
-  z-index: 2; // Adjusted z-index to control stacking order
+  z-index: 2;
 }
 
 .ellipsis-dot {

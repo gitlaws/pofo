@@ -1,4 +1,10 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  QueryList,
+  ViewChildren,
+} from '@angular/core';
 
 @Component({
   selector: 'app-ellipsis',
@@ -6,7 +12,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./ellipsis.component.scss'],
 })
 export class EllipsisComponent {
-  isDarkMode: boolean = false;
+  @ViewChildren('dotElement') dotElements!: QueryList<ElementRef>;
   isMenuOpen = false;
   isMiddleDivClicked = false;
 
@@ -14,7 +20,18 @@ export class EllipsisComponent {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-  toggleMiddleDiv() {
+  toggleMiddleDiv(event: MouseEvent) {
+    event.stopPropagation();
     this.isMiddleDivClicked = !this.isMiddleDivClicked;
+  }
+
+  @HostListener('document:click', ['$event'])
+  clickout(event: MouseEvent) {
+    const clickedInside = this.dotElements.some((dotElement) =>
+      dotElement.nativeElement.contains(event.target)
+    );
+    if (!clickedInside) {
+      this.isMiddleDivClicked = false;
+    }
   }
 }

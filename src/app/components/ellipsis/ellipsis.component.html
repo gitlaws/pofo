@@ -1,15 +1,13 @@
 <div class="ellipsis-container">
   <div class="ellipsis">
-    <div class="ellipsis-dot" [class.theme-dark]="isDarkMode"></div>
     <div
+      *ngFor="let i of [0, 1, 2]; let dotIndex = index"
       class="ellipsis-dot"
-      [class.theme-dark]="isDarkMode"
-      [class.clicked]="isMiddleDivClicked"
-      (click)="toggleMiddleDiv()"
+      [class.clicked]="isMiddleDivClicked && i === 1"
+      (click)="i === 1 && toggleMiddleDiv($event)"
+      #dotElement
     ></div>
-    <div class="ellipsis-dot" [class.theme-dark]="isDarkMode"></div>
   </div>
-
   <img class="crosshair-image" src="assets/titan.png" />
   <app-menu></app-menu>
 </div>

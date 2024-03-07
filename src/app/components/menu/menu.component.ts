@@ -14,6 +14,8 @@ export class MenuComponent {
   ];
 
   toggleMenu() {
+    console.log('toggleMenu function called');
     this.isMenuOpen = !this.isMenuOpen;
+    console.log('isMenuOpen:', this.isMenuOpen);
   }
 }

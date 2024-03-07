@@ -10,18 +10,15 @@
   >
     Menu
   </button>
-  <div
-    class="dropdown-menu"
-    [ngClass]="{ 'theme-dark': isDarkMode }"
-    [style.display]="isMenuOpen ? 'block' : 'none'"
-    [style.opacity]="isMenuOpen ? '1' : '0'"
-  >
+  <div *ngIf="isMenuOpen" class="dropdown-menu">
     <!-- Links -->
-    <a class="dropdown-item" [href]="item1Url" aria-label="Navigate to Item 1"
-      >Item 1</a
+    <a
+      *ngFor="let item of menuItems"
+      class="dropdown-item"
+      [href]="item.url"
+      [attr.aria-label]="'Navigate to ' + item.name"
     >
-    <a class="dropdown-item" [href]="item2Url" aria-label="Navigate to Item 2"
-      >Item 2</a
-    >
+      {{ item.name }}
+    </a>
   </div>
 </div>

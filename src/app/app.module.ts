@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ThemeService } from './services/theme.service';
 import { ThemeToggleComponent } from './components/theme-toggle/theme-toggle.component';
 import { ComponentDocumentationComponent } from './components/component-documentation/component-documentation.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -27,6 +26,6 @@ import { MenuModule } from './components/menu/menu.module';
   ],
   imports: [BrowserModule, AppRoutingModule, MenuModule],
   providers: [],
-  bootstrap: [AppComponent, EllipsisComponent],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -23,7 +23,7 @@
 .crosshair-image,
 app-menu {
   position: absolute;
-  z-index: 2; // Added z-index to control stacking order
+  z-index: 1; // Added z-index to control stacking order
   opacity: 0.5; // Added opacity to create a blending effect
 
   &.crosshair-image {
@@ -38,7 +38,7 @@ app-menu {
   justify-content: space-between;
   width: 50px;
   position: absolute;
-  z-index: 1; // Adjusted z-index to control stacking order
+  z-index: 2; // Adjusted z-index to control stacking order
 
   div {
     width: 10px;

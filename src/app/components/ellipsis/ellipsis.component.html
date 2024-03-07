@@ -1,11 +1,12 @@
 <div class="ellipsis-container" (click)="toggleMiddleDiv()">
   <div class="ellipsis">
-    <div [class.theme-dark]="isDarkMode"></div>
+    <div class="ellipsis-dot" [class.theme-dark]="isDarkMode"></div>
     <div
+      class="ellipsis-dot"
       [class.theme-dark]="isDarkMode"
       [class.clicked]="isMiddleDivClicked"
     ></div>
-    <div [class.theme-dark]="isDarkMode"></div>
+    <div class="ellipsis-dot" [class.theme-dark]="isDarkMode"></div>
   </div>
   <div class="centered-container">
     <img class="crosshair-image" src="assets/titan.png" />

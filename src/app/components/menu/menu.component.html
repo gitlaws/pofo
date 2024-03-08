@@ -2,10 +2,12 @@
   <button
     class="btn btn-secondary dropdown-toggle"
     type="button"
-    id="menuButton"
+    id="menu-button"
     (click)="toggleMenu()"
+    aria-haspopup="true"
+    [attr.aria-expanded]="isMenuOpen ? 'true' : 'false'"
   >
-    <!-- <img class="crosshair-image" src="assets/titan.png" alt="Crosshair Image" /> -->
+    <!-- <img class="crosshair-image" src="assets/titan.png" alt="Image of Titan" /> -->
 
     <app-ellipsis></app-ellipsis>
     Menu

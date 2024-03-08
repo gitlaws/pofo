@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-menu',
@@ -13,9 +13,16 @@ export class MenuComponent {
     // Add more items as needed
   ];
 
+  constructor(private eRef: ElementRef) {}
+
   toggleMenu() {
-    console.log('toggleMenu function called');
     this.isMenuOpen = !this.isMenuOpen;
-    console.log('isMenuOpen:', this.isMenuOpen);
+  }
+
+  @HostListener('document:click', ['$event'])
+  clickout(event: Event) {
+    if (!this.eRef.nativeElement.contains(event.target)) {
+      this.isMenuOpen = false;
+    }
   }
 }

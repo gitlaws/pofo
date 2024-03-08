@@ -1,16 +1,17 @@
-<div class="dropdown">
+<div class="dropdown" (click)="toggleMenu()">
   <button
     class="btn btn-secondary dropdown-toggle"
     type="button"
     id="menu-button"
-    (click)="toggleMenu()"
     aria-haspopup="true"
     [attr.aria-expanded]="isMenuOpen ? 'true' : 'false'"
+    aria-label="Menu"
   >
     <!-- <img class="crosshair-image" src="assets/titan.png" alt="Image of Titan" /> -->
 
-    <app-ellipsis></app-ellipsis>
-    Menu
+    <span>
+      <app-ellipsis></app-ellipsis>
+    </span>
   </button>
   <ul *ngIf="isMenuOpen" class="menu">
     <li *ngFor="let item of menuItems">

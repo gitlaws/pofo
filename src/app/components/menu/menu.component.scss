@@ -6,13 +6,55 @@
   position: relative;
 
   .btn-secondary.dropdown-toggle {
-    background-color: #ffcc00; // Yellow background for under construction
-    color: #333; // Dark gray text for better contrast
-    padding: 12px 24px;
+    position: relative;
+    background-color: #ffcc00;
+    color: #333;
+    width: auto;
+    height: auto;
+    // padding: 10px;
     border-radius: 5px;
     font-size: 18px;
     font-weight: 500;
-    transition: all 0.3s ease; // Transition for smoother hover effect
+    transition: all 0.3s ease;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &:hover .crosshair-image {
+      opacity: 1;
+    }
+  }
+
+  .centered-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // height: auto;
+  }
+
+  .crosshair-image {
+    position: absolute;
+    width: 60px;
+    height: auto;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1); // Scale the image up to 110% when hovered over
+      filter: saturate(
+        200%
+      ); // Double the saturation of the image when hovered over
+    }
+  }
+
+  app-ellipsis {
+    position: absolute;
+    z-index: 2;
   }
 
   .dropdown-menu {

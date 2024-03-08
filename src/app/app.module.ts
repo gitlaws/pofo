@@ -1,30 +1,35 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ThemeToggleComponent } from './components/theme-toggle/theme-toggle.component';
 import { ComponentDocumentationComponent } from './components/component-documentation/component-documentation.component';
 import { HeaderComponent } from './components/header/header.component';
 import { GridPanelComponent } from './components/grid-panel/grid-panel.component';
 import { MainSectionComponent } from './components/main-section/main-section.component';
 
 import { EllipsisComponent } from './components/ellipsis/ellipsis.component';
-import { SocialLinksComponent } from './components/social-links/social-links.component';
 import { MenuModule } from './components/menu/menu.module';
+import { ThemeToggleModule } from './components/theme-toggle/theme-toggle.module';
+import { SocialLinksModule } from './components/social-links/social-links.module'; // Import SocialLinksModule
 
 @NgModule({
   declarations: [
     AppComponent,
-    ThemeToggleComponent,
     ComponentDocumentationComponent,
     HeaderComponent,
     GridPanelComponent,
     MainSectionComponent,
     EllipsisComponent,
-    SocialLinksComponent,
+    // Remove SocialLinksComponent from declarations
   ],
-  imports: [BrowserModule, AppRoutingModule, MenuModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MenuModule,
+    ThemeToggleModule,
+    SocialLinksModule, // Add SocialLinksModule to imports
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

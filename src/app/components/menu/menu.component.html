@@ -14,5 +14,11 @@
     <li *ngFor="let item of menuItems">
       <a [routerLink]="item.url" class="menu-item">{{ item.name }}</a>
     </li>
+    <li>
+      <app-theme-toggle></app-theme-toggle>
+    </li>
+    <li>
+      <app-social-links></app-social-links>
+    </li>
   </ul>
 </div>

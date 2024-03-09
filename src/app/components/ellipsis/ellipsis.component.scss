@@ -24,14 +24,10 @@ app-menu {
   height: auto;
   z-index: 1;
   opacity: 0;
-  transition: opacity 0.3s ease;
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 
-  &:hover {
-    transform: scale(1.1); // Scale the image up to 110% when hovered over
-    filter: saturate(
-      200%
-    ); // Double the saturation of the image when hovered over
+  .ellipsis-button:hover & {
+    opacity: 1;
   }
 }
 

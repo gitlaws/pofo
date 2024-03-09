@@ -1,18 +1,18 @@
-<div class="ellipsis-container">
-  <img
-    class="crosshair-image"
-    src="assets/titan.png"
-    alt="Image of Crosshair"
-  />
-  <div class="ellipsis">
-    <div
-      *ngFor="let i of [0, 1, 2]; let dotIndex = index"
-      class="ellipsis-dot"
-      [class.clicked]="isMiddleDivClicked && i === 1"
-      (click)="i === 1 && toggleMiddleDiv($event)"
-      #dotElement
-    ></div>
+<button class="ellipsis-button">
+  <div class="ellipsis-container">
+    <img
+      class="crosshair-image"
+      src="assets/titan.png"
+      alt="Image of Crosshair"
+    />
+    <div class="ellipsis">
+      <div
+        *ngFor="let i of [0, 1, 2]; let dotIndex = index"
+        class="ellipsis-dot"
+        [class.clicked]="isMiddleDivClicked && i === 1"
+        (click)="i === 1 && toggleMiddleDiv($event)"
+        #dotElement
+      ></div>
+    </div>
   </div>
-
-  <!-- <app-menu></app-menu> -->
-</div>
+</button>

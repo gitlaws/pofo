@@ -1,17 +1,18 @@
 <div class="ellipsis-container">
   <img
     class="crosshair-image"
-    [class.open]="isOpen"
     src="assets/titan.png"
     alt="Image of Crosshair"
-    (click)="toggleOpen()"
   />
   <div class="ellipsis">
-    <div
-      *ngFor="let i of [0, 1, 2]; let dotIndex = index"
-      class="ellipsis-dot"
-      [class.clicked]="isMiddleDivClicked && i === 1"
-      #dotElement
-    ></div>
+    <ng-container *ngFor="let i of [0, 1, 2]; let dotIndex = index">
+      <div
+        class="ellipsis-dot"
+        [class.clicked]="middleDotIsClicked && i === 1"
+        *ngIf="(!menuIsOpen && (!imageIsHovered || i === 1)) || (menuIsOpen && i === 1)"
+        (click)="handleDotClick(i)"
+        #dotElement
+      ></div>
+    </ng-container>
   </div>
 </div>

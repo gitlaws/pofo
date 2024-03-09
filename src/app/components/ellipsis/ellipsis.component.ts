@@ -13,30 +13,23 @@ import {
 })
 export class EllipsisComponent {
   @ViewChildren('dotElement') dotElements!: QueryList<ElementRef>;
-  isMenuOpen = false;
-  isMiddleDivClicked = false;
-  isOpen = false;
 
-  toggleOpen(): void {
-    this.isOpen = !this.isOpen;
+  middleDotIsClicked = false;
+  imageIsHovered = false; // Add this property
+  menuIsOpen = false;
+
+  handleDotClick(dotIndex: number) {
+    if (dotIndex === 1) {
+      this.middleDotIsClicked = !this.middleDotIsClicked;
+    }
+  }
+
+  handleImageHover() {
+    // Add this method
+    this.imageIsHovered = true;
   }
 
   toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
-
-  toggleMiddleDiv(event: MouseEvent) {
-    event.stopPropagation();
-    this.isMiddleDivClicked = !this.isMiddleDivClicked;
-  }
-
-  @HostListener('document:click', ['$event'])
-  clickout(event: MouseEvent) {
-    const clickedInside = this.dotElements.some((dotElement) =>
-      dotElement.nativeElement.contains(event.target)
-    );
-    if (!clickedInside) {
-      this.isMiddleDivClicked = false;
-    }
+    this.menuIsOpen = !this.menuIsOpen;
   }
 }

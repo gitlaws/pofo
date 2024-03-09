@@ -22,10 +22,6 @@
     .ellipsis-dot:nth-child(3) {
       display: none;
     }
-
-    .ellipsis {
-      justify-content: center;
-    }
   }
 }
 
@@ -45,7 +41,7 @@
 
 .ellipsis {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; // Always center the dots
   width: 50px;
   position: absolute;
   z-index: 1;

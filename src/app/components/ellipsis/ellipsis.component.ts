@@ -15,21 +15,29 @@ export class EllipsisComponent {
   @ViewChildren('dotElement') dotElements!: QueryList<ElementRef>;
 
   middleDotIsClicked = false;
-  imageIsHovered = false; // Add this property
+  imageIsHovered = false;
   menuIsOpen = false;
 
   handleDotClick(dotIndex: number) {
     if (dotIndex === 1) {
-      this.middleDotIsClicked = !this.middleDotIsClicked;
+      if (this.menuIsOpen || this.imageIsHovered) {
+        this.middleDotIsClicked = true;
+      } else {
+        this.middleDotIsClicked = false;
+      }
     }
   }
 
   handleImageHover() {
-    // Add this method
     this.imageIsHovered = true;
   }
 
   toggleMenu() {
     this.menuIsOpen = !this.menuIsOpen;
+  }
+
+  resetEllipsis() {
+    this.middleDotIsClicked = false;
+    this.imageIsHovered = false;
   }
 }

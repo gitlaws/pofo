@@ -11,7 +11,8 @@
       <app-ellipsis></app-ellipsis>
     </div>
   </button>
-  <ul *ngIf="isMenuOpen" class="menu">
+  <ul *ngIf="isMenuOpen" 
+  class="menu">
     <li *ngFor="let item of menuItems">
       <a [routerLink]="item.url" class="menu-item" aria-label="item.name">{{
         item.name

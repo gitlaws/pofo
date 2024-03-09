@@ -1,4 +1,12 @@
-import { Component, HostListener, ElementRef } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Output,
+  HostListener,
+  ElementRef,
+  ViewChild,
+} from '@angular/core';
+import { EllipsisComponent } from '../ellipsis/ellipsis.component';
 
 @Component({
   selector: 'app-menu',
@@ -6,6 +14,9 @@ import { Component, HostListener, ElementRef } from '@angular/core';
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent {
+  @Output() menuClosed = new EventEmitter<void>();
+  @ViewChild(EllipsisComponent) ellipsisComponent!: EllipsisComponent;
+
   isMenuOpen = false;
   menuItems = [
     { name: 'Item 1', url: '/item1' },
@@ -23,6 +34,8 @@ export class MenuComponent {
   clickout(event: Event) {
     if (!this.eRef.nativeElement.contains(event.target)) {
       this.isMenuOpen = false;
+      this.menuClosed.emit();
+      this.ellipsisComponent.resetEllipsis();
     }
   }
 }

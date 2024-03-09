@@ -3,13 +3,14 @@
     class="crosshair-image"
     src="assets/titan.png"
     alt="Image of Crosshair"
+    (click)="toggleMenu()"
   />
   <div class="ellipsis">
     <ng-container *ngFor="let i of [0, 1, 2]; let dotIndex = index">
       <div
         class="ellipsis-dot"
-        [class.clicked]="middleDotIsClicked && i === 1"
-        *ngIf="(!menuIsOpen && (!imageIsHovered || i === 1)) || (menuIsOpen && i === 1)"
+        [class.clicked]="menuIsOpen && i === 1"
+        *ngIf="!menuIsOpen || i === 1 || (menuIsOpen && i === 1)"
         (click)="handleDotClick(i)"
         #dotElement
       ></div>

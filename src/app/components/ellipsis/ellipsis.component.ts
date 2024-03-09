@@ -15,6 +15,11 @@ export class EllipsisComponent {
   @ViewChildren('dotElement') dotElements!: QueryList<ElementRef>;
   isMenuOpen = false;
   isMiddleDivClicked = false;
+  isOpen = false;
+
+  toggleOpen(): void {
+    this.isOpen = !this.isOpen;
+  }
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;

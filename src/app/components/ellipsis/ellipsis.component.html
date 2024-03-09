@@ -1,8 +1,10 @@
 <div class="ellipsis-container">
   <img
     class="crosshair-image"
+    [class.open]="isOpen"
     src="assets/titan.png"
     alt="Image of Crosshair"
+    (click)="toggleOpen()"
   />
   <div class="ellipsis">
     <div

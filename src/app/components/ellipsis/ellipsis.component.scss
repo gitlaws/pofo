@@ -44,6 +44,10 @@ app-menu {
   // }
 }
 
+.crosshair-image.open {
+  opacity: 1;
+}
+
 .ellipsis {
   display: flex;
   justify-content: space-between;

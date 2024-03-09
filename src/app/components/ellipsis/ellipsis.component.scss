@@ -29,6 +29,10 @@ app-menu {
   z-index: 1;
   opacity: 0;
   transition: opacity 0.3s ease, transform 0.3s ease;
+
+  &:hover ~ .ellipsis .ellipsis-dot:nth-child(2):not(.clicked) {
+    animation: flash 0.2s infinite;
+  }
 }
 
 .ellipsis {
@@ -48,16 +52,5 @@ app-menu {
 
   &.clicked {
     background-color: #00ff00;
-  }
-}
-
-.ellipsis:hover {
-  .ellipsis-dot:nth-child(1),
-  .ellipsis-dot:nth-child(3) {
-    background-color: #aaa;
-  }
-
-  .ellipsis-dot:nth-child(2):not(.clicked) {
-    animation: flash 0.2s infinite;
   }
 }

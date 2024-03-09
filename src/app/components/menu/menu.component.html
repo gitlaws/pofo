@@ -1,4 +1,4 @@
-<div class="dropdown" (click)="toggleMenu()">
+<nav class="dropdown" (click)="toggleMenu()">
   <button
     class="btn btn-secondary dropdown-toggle"
     type="button"
@@ -20,7 +20,9 @@
   </button>
   <ul *ngIf="isMenuOpen" class="menu">
     <li *ngFor="let item of menuItems">
-      <a [routerLink]="item.url" class="menu-item">{{ item.name }}</a>
+      <a [routerLink]="item.url" class="menu-item" aria-label="item.name">{{
+        item.name
+      }}</a>
     </li>
     <li>
       <app-theme-toggle></app-theme-toggle>
@@ -29,4 +31,4 @@
       <app-social-links></app-social-links>
     </li>
   </ul>
-</div>
+</nav>

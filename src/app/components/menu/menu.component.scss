@@ -35,8 +35,6 @@
     // height: auto;
   }
 
-  
-
   app-ellipsis {
     position: absolute;
     z-index: 2;
@@ -140,4 +138,11 @@
       }
     }
   }
+}
+
+#menu-button {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  color: transparent;
 }

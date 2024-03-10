@@ -10,8 +10,10 @@ import { MainSectionComponent } from './components/main-section/main-section.com
 import { ThemeToggleModule } from '../shared/shared/theme-toggle.module';
 import { SocialLinksModule } from '../shared/shared/social-links.module';
 import { NavdropModule } from '../shared/shared/navdrop.module'; // Import NavdropModule
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @NgModule({
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
     AppComponent,
     ComponentDocumentationComponent,
@@ -28,6 +30,7 @@ import { NavdropModule } from '../shared/shared/navdrop.module'; // Import Navdr
     SocialLinksModule,
     NavdropModule, // Add NavdropModule to imports
   ],
+  exports: [NavdropModule],
   providers: [],
   bootstrap: [AppComponent],
 })

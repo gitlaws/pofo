@@ -6,10 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./ellipsis.component.scss'],
 })
 export class EllipsisComponent {
-  menuIsOpen = false;
+  isMenuOpen = false;
 
   resetEllipsis() {
     // Add the logic to reset the ellipsis here
-    this.menuIsOpen = false;
+    this.isMenuOpen = false;
   }
 }

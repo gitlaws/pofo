@@ -20,6 +20,10 @@
     transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 50%;
 
+    &:hover ~ .ellipsis .ellipsis-dot.hide-dot {
+      opacity: 0;
+    }
+
     &.open {
       opacity: 1;
       transform: scale(1.1) rotate(45deg);
@@ -34,12 +38,19 @@
     box-shadow: 0 0 10px #ffffff;
   }
 
+  &:hover .ellipsis-dot.hide-dot {
+    opacity: 0;
+  }
+
   .ellipsis {
     display: flex;
-    justify-content: space-between;
-    width: 50px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 60px; // Adjust to your needs
     position: absolute;
     z-index: 1;
+    gap: 10px;
 
     .ellipsis-dot {
       width: 10px;
@@ -55,7 +66,8 @@
       }
 
       &.hide-dot {
-        opacity: 0;
+        opacity: 1;
+        transition: opacity 0.3s ease;
       }
     }
   }

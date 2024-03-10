@@ -41,7 +41,7 @@
 
 .ellipsis {
   display: flex;
-  justify-content: center; // Always center the dots
+  justify-content: space-between; // Always center the dots
   width: 50px;
   position: absolute;
   z-index: 1;
@@ -51,14 +51,6 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #ff0000; // Red color
+  background-color: #ff0000; // Red color by default
   transition: background-color 0.3s ease, transform 0.3s ease;
-
-  &:hover {
-    transform: scale(1.2); // Slightly enlarge the dot on hover
-  }
-
-  &.clicked {
-    background-color: #ff0000; // Green color
-  }
 }

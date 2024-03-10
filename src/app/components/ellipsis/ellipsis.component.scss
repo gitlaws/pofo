@@ -14,7 +14,7 @@
   &:hover .crosshair-image {
     opacity: 1;
     transform: scale(1.1) rotate(45deg); // Add rotation to the hover effect
-    box-shadow: 0 0 10px #00ff00; // Add a green glow effect
+    box-shadow: 0 0 10px #ffffff; // Add a white glow effect
   }
 
   &:hover {
@@ -51,7 +51,7 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #fffefe; // Dark gray color
+  background-color: #ff0000; // Red color
   transition: background-color 0.3s ease, transform 0.3s ease;
 
   &:hover {
@@ -59,6 +59,6 @@
   }
 
   &.clicked {
-    background-color: #00ff00; // Green color
+    background-color: #ff0000; // Green color
   }
 }

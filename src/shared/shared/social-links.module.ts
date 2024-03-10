@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SocialLinksComponent } from './social-links.component';
+import { SocialLinksComponent } from '../../app/components/social-links/social-links.component';
 
 @NgModule({
   declarations: [SocialLinksComponent],

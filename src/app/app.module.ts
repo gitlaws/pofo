@@ -8,10 +8,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { GridPanelComponent } from './components/grid-panel/grid-panel.component';
 import { MainSectionComponent } from './components/main-section/main-section.component';
 
-import { MenuModule } from './components/menu/menu.module';
-import { ThemeToggleModule } from './components/theme-toggle/theme-toggle.module';
-import { SocialLinksModule } from './components/social-links/social-links.module'; // Import SocialLinksModule
-import { EllipsisModule } from './components/ellipsis/ellipsis.module'; // Import EllipsisModule
+import { MenuModule } from '../shared/shared/menu.module';
+import { ThemeToggleModule } from '../shared/shared/theme-toggle.module';
+import { SocialLinksModule } from '../shared/shared/social-links.module'; // Import SocialLinksModule
+import { EllipsisModule } from '../shared/shared/ellipsis.module'; // Import EllipsisModule
 
 @NgModule({
   declarations: [

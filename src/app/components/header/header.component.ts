@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
-import { ThemeService } from 'src/app/services/theme.service';
-import { Theme } from 'src/app/services/theme.enum';
+import { ThemeService } from 'src/shared/services/theme.service';
+import { Theme } from 'src/shared/services/theme.enum';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 

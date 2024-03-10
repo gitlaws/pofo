@@ -1,19 +1,17 @@
-<div class="ellipsis-container" (mouseleave)="resetEllipsis()" (click)="toggleMenu()">
+<div class="ellipsis-container">
   <img
     class="crosshair-image"
     [class.open]="menuIsOpen"
     src="assets/kiss.png"
     alt="Image of Crosshair"
-    (mouseover)="toggleMenu()"
-    (mouseout)="toggleMenu()"
   />
   <div class="ellipsis">
     <ng-container *ngFor="let i of [0, 1, 2]; let dotIndex = index">
-      <div
+      <button
         class="ellipsis-dot"
-        [ngClass]="{'hide-dot': (menuIsOpen || isHovered || !isClickedOutside) && (i === 0 || i === 2)}"
-        #dotElement
-      ></div>
+        type="button"
+        aria-label="Toggle menu"
+      ></button>
     </ng-container>
   </div>
 </div>

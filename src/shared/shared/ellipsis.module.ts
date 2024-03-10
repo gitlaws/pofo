@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EllipsisComponent } from './ellipsis.component';
+import { EllipsisComponent } from '../../app/components/ellipsis/ellipsis.component';
 
 @NgModule({
   declarations: [EllipsisComponent],

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ThemeToggleComponent } from './theme-toggle.component';
+import { ThemeToggleComponent } from '../../app/components/theme-toggle/theme-toggle.component';
 
 @NgModule({
   declarations: [ThemeToggleComponent],

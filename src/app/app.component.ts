@@ -1,6 +1,6 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
-import { ThemeService } from './services/theme.service';
-import { Theme } from './services/theme.enum';
+import { ThemeService } from '../shared/services/theme.service';
+import { Theme } from '../shared/services/theme.enum';
 
 @Component({
   selector: 'app-root',

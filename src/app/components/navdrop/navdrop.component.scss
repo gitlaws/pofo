@@ -3,7 +3,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  position: relative;
+  height: auto;
   // background: url("path-to-your-image.jpg") no-repeat center center fixed;
   // background-size: cover;
 }
@@ -13,9 +14,48 @@
 }
 
 .menu-button {
-  // add your button styles here
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 50px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    background-color: #0056b3;
+    transform: scale(1.1); // Slightly enlarge the button when hovered
+  }
 }
 
 .menu {
-  // add your menu styles here
+  position: absolute;
+  top: 60px;
+  list-style-type: none;
+  background-color: #ffffff;
+  color: #333333;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 10px;
+  transition: all 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  li {
+    margin: 10px 0; // space between menu items
+  }
+
+  a {
+    color: #333333;
+    text-decoration: none;
+  }
 }

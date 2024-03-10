@@ -7,11 +7,9 @@ import { ComponentDocumentationComponent } from './components/component-document
 import { HeaderComponent } from './components/header/header.component';
 import { GridPanelComponent } from './components/grid-panel/grid-panel.component';
 import { MainSectionComponent } from './components/main-section/main-section.component';
-
-import { MenuModule } from '../shared/shared/menu.module';
 import { ThemeToggleModule } from '../shared/shared/theme-toggle.module';
-import { SocialLinksModule } from '../shared/shared/social-links.module'; // Import SocialLinksModule
-import { EllipsisModule } from '../shared/shared/ellipsis.module'; // Import EllipsisModule
+import { SocialLinksModule } from '../shared/shared/social-links.module';
+import { NavdropModule } from '../shared/shared/navdrop.module'; // Import NavdropModule
 
 @NgModule({
   declarations: [
@@ -26,10 +24,9 @@ import { EllipsisModule } from '../shared/shared/ellipsis.module'; // Import Ell
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MenuModule,
     ThemeToggleModule,
-    SocialLinksModule, // Add SocialLinksModule to imports
-    EllipsisModule, // Add EllipsisModule to imports
+    SocialLinksModule,
+    NavdropModule, // Add NavdropModule to imports
   ],
   providers: [],
   bootstrap: [AppComponent],

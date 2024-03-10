@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { NavdropComponent } from './navdrop.component'; // import NavdropComponent
+import { NavdropComponent } from '../../app/components/navdrop/navdrop.component'; // import NavdropComponent
 
 @NgModule({
   declarations: [

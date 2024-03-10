@@ -1,9 +1,9 @@
 import {
   Component,
   ElementRef,
-  HostListener,
   QueryList,
   ViewChildren,
+  HostListener,
 } from '@angular/core';
 
 @Component({
@@ -14,30 +14,40 @@ import {
 export class EllipsisComponent {
   @ViewChildren('dotElement') dotElements!: QueryList<ElementRef>;
 
-  middleDotIsClicked = false;
-  imageIsHovered = false;
   menuIsOpen = false;
-
-  handleDotClick(dotIndex: number) {
-    if (dotIndex === 1) {
-      if (this.menuIsOpen || this.imageIsHovered) {
-        this.middleDotIsClicked = true;
-      } else {
-        this.middleDotIsClicked = false;
-      }
-    }
-  }
-
-  handleImageHover() {
-    this.imageIsHovered = true;
-  }
+  isHovered = false;
+  isClickedOutside = false;
 
   toggleMenu() {
     this.menuIsOpen = !this.menuIsOpen;
   }
 
   resetEllipsis() {
-    this.middleDotIsClicked = false;
-    this.imageIsHovered = false;
+    this.menuIsOpen = false;
+    this.isHovered = false;
+    this.isClickedOutside = false;
+  }
+
+  onMouseEnter() {
+    this.isHovered = true;
+  }
+
+  onMouseLeave() {
+    if (!this.menuIsOpen) {
+      this.isHovered = false;
+    }
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    const ellipsisContainer = document.querySelector('.ellipsis-container');
+    const clickedInside = ellipsisContainer?.contains(event.target as Node);
+    const clickedOnDot = (event.target as Element).classList.contains(
+      'ellipsis-dot'
+    );
+    if (!clickedInside && !clickedOnDot) {
+      this.resetEllipsis();
+      this.isClickedOutside = true;
+    }
   }
 }

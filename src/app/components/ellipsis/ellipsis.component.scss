@@ -9,48 +9,54 @@
   position: relative;
   height: auto;
   width: 100%;
-  background-color: #d3d3d3; // Light grey color
+  background-color: #d3d3d3;
 
-  &:hover .crosshair-image {
-    opacity: 1;
-    transform: scale(1.1) rotate(45deg); // Add rotation to the hover effect
-    box-shadow: 0 0 10px #ffffff; // Add a white glow effect
-  }
+  .crosshair-image {
+    position: absolute;
+    width: 60px;
+    height: auto;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 50%;
 
-  &:hover {
-    .ellipsis-dot:nth-child(1),
-    .ellipsis-dot:nth-child(3) {
-      display: none;
+    &.open {
+      opacity: 1;
+      transform: scale(1.1) rotate(45deg);
+      box-shadow: 0 0 10px #ffffff;
     }
   }
-}
 
-.crosshair-image {
-  position: absolute;
-  width: 60px;
-  height: auto;
-  z-index: 2;
-  opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; // Add transition for box-shadow
-  border-radius: 50%; // Make the image circular
-}
+  &:hover .crosshair-image,
+  &.open .crosshair-image {
+    opacity: 1;
+    transform: scale(1.1) rotate(45deg);
+    box-shadow: 0 0 10px #ffffff;
+  }
 
-.crosshair-image.open {
-  opacity: 1;
-}
+  .ellipsis {
+    display: flex;
+    justify-content: space-between;
+    width: 50px;
+    position: absolute;
+    z-index: 1;
 
-.ellipsis {
-  display: flex;
-  justify-content: space-between; // Always center the dots
-  width: 50px;
-  position: absolute;
-  z-index: 1;
-}
+    .ellipsis-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #ff0000;
+      transition: background-color 0.3s ease, transform 0.3s ease,
+        opacity 0.3s ease;
 
-.ellipsis-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #ff0000; // Red color by default
-  transition: background-color 0.3s ease, transform 0.3s ease;
+      &:hover {
+        transform: scale(1.2);
+        background-color: #00ff00;
+      }
+
+      &.hide-dot {
+        opacity: 0;
+      }
+    }
+  }
 }

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EllipsisComponent } from './ellipsis.component';
+import { NavdropComponent } from './navdrop.component';
 
-describe('EllipsisComponent', () => {
-  let component: EllipsisComponent;
-  let fixture: ComponentFixture<EllipsisComponent>;
+describe('NavdropComponent', () => {
+  let component: NavdropComponent;
+  let fixture: ComponentFixture<NavdropComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [EllipsisComponent]
+      imports: [NavdropComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(EllipsisComponent);
+    fixture = TestBed.createComponent(NavdropComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

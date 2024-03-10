@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="ellipsis" (click)="toggleMenu()">
+    <!-- replace with your animated ellipsis component if you have one -->
+    <span>.</span><span>.</span><span>.</span>
+  </div>
+  <button class="menu-button" (click)="toggleMenu()">Menu</button>
+  <ul *ngIf="isMenuOpen" class="menu">
+    <li *ngFor="let item of menuItems">
+      <a [routerLink]="item.url" class="menu-item">{{ item.name }}</a>
+    </li>
+  </ul>
+</div>

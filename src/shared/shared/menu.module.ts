@@ -10,7 +10,6 @@ import { EllipsisModule } from './ellipsis.module'; // Import EllipsisModule
   declarations: [MenuComponent],
   imports: [
     CommonModule,
-    EllipsisModule,
     RouterModule,
     ThemeToggleModule,
     SocialLinksModule, // Add SocialLinksModule to the imports array

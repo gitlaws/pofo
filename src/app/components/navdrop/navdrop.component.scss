@@ -2,53 +2,85 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 
   .menu-toggle {
-    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // padding: 10px;
+    background-color: #f5f5f5;
     border: none;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #e0e0e0;
+    }
 
     .ellipsis {
       display: flex;
-      justify-content: space-between;
-      transition: transform 0.3s ease;
+      justify-content: space-around;
+      align-items: center;
+      width: 20px;
+      height: 20px;
 
       &.container-with-bg {
+        align-self: center;
         background-image: url("/assets/kissr.png");
-        background-size: cover; // Cover the entire container
-        background-position: center; // Center the background image
-        transition: background 0.3s ease; // Smooth transition for the background image
+        background-size: cover;
+        background-position: contain;
+        width: 50px;
+        height: 50px;
       }
 
       span {
         display: block;
-        width: 5px;
-        height: 5px;
+        width: 8px;
+        height: 8px;
         border-radius: 50%;
         background-color: #000;
-        transition: background-color 0.3s ease;
-
-        &:hover {
-          background-color: #f00;
-          animation: pulse 1s infinite; // Add a pulse animation on hover
-        }
       }
     }
   }
 
-  // Define the pulse animation
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
+  .menu {
+    position: absolute;
+    top: 100%;
+    right: auto;
+
+    transform: translateX(-50%); // Center the menu
+    width: 200px; // Use a fixed width
+    background: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+
+    &.open {
+      transform: translateX(-50%);
+      opacity: 1;
     }
-    50% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1);
+
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+      padding: 10px 0;
+
+      a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        transition: color 0.3s ease, background-color 0.3s ease; // Add a transition for the background color
+
+        &:hover {
+          color: #007bff;
+          background-color: #f5f5f5; // Add a subtle background color on hover
+        }
+      }
     }
   }
-
-  // Rest of your styles
 }

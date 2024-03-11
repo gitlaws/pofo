@@ -11,9 +11,9 @@
     </button>
   </nav>
 
-  <!-- Menu items -->
+  <!-- Menu -->
   <ul *ngIf="isMenuOpen" class="menu">
-    <!-- Standard menu items -->
+    <!-- Menu Items Links -->
     <li *ngFor="let item of menuItems">
       <a [routerLink]="item.url" class="menu-item">{{ item.name }}</a>
     </li>

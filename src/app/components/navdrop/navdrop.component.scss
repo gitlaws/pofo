@@ -1,61 +1,54 @@
-/* menu.component.scss */
 .container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  height: auto;
-  // background: url("path-to-your-image.jpg") no-repeat center center fixed;
-  // background-size: cover;
-}
-
-.ellipsis {
-  // add your animation styles here
-}
-
-.menu-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 60px;
-  height: 50px;
-  background-color: #007bff;
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-
-  &:hover {
-    background-color: #0056b3;
-    transform: scale(1.1); // Slightly enlarge the button when hovered
-  }
-}
-
-.menu {
-  position: absolute;
-  top: 60px;
-  list-style-type: none;
-  background-color: #ffffff;
-  color: #333333;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  padding: 10px;
-  transition: all 0.3s ease;
-
-  display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 
-  li {
-    margin: 10px 0; // space between menu items
+  .menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    .ellipsis {
+      display: flex;
+      justify-content: space-between;
+      transition: transform 0.3s ease;
+
+      &.container-with-bg {
+        background-image: url("/assets/kissr.png");
+        background-size: cover; // Cover the entire container
+        background-position: center; // Center the background image
+        transition: background 0.3s ease; // Smooth transition for the background image
+      }
+
+      span {
+        display: block;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: #000;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #f00;
+          animation: pulse 1s infinite; // Add a pulse animation on hover
+        }
+      }
+    }
   }
 
-  a {
-    color: #333333;
-    text-decoration: none;
+  // Define the pulse animation
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
+
+  // Rest of your styles
 }

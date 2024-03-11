@@ -112,3 +112,17 @@
     background-color: #ff0000;
   }
 }
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.element {
+  background-image: url("~src/assets/kiss.png");
+  animation: rotate 2s linear infinite;
+}

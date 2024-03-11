@@ -1,31 +1,26 @@
-<div class="container">
-  <!-- Navigation -->
-  <nav>
-    <!-- Menu toggle button with ellipsis -->
-    <button class="menu-toggle" aria-label="Menu" (click)="toggleMenu()">
-      <div class="ellipsis container-with-bg">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </button>
-  </nav>
+<button class="menu-toggle" aria-label="Menu" (click)="toggleMenu()">
+  <div class="container-with-bg"></div>
+  <div class="ellipsis">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</button>
 
-  <!-- Menu -->
-  <ul *ngIf="isMenuOpen" class="menu">
-    <!-- Menu Items Links -->
-    <li *ngFor="let item of menuItems">
-      <a [routerLink]="item.url" class="menu-item">{{ item.name }}</a>
-    </li>
+<!-- Menu -->
+<ul *ngIf="isMenuOpen" class="menu">
+  <!-- Menu Items Links -->
+  <li *ngFor="let item of menuItems">
+    <a [routerLink]="item.url" class="menu-item">{{ item.name }}</a>
+  </li>
 
-    <!-- Theme toggle -->
-    <li>
-      <app-theme-toggle></app-theme-toggle>
-    </li>
+  <!-- Theme toggle -->
+  <li>
+    <app-theme-toggle></app-theme-toggle>
+  </li>
 
-    <!-- Social links -->
-    <li>
-      <app-social-links></app-social-links>
-    </li>
-  </ul>
-</div>
+  <!-- Social links -->
+  <li>
+    <app-social-links></app-social-links>
+  </li>
+</ul>

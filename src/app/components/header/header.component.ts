@@ -17,6 +17,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   constructor(private themeService: ThemeService) {}
 
+  menuItems = [
+    { name: 'Home', url: '/home' },
+    { name: 'About', url: '/about' },
+  ];
+
   ngOnInit(): void {
     this.themeService.currentTheme
       .pipe(takeUntil(this.unsubscribe$))

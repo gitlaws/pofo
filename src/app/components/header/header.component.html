@@ -4,7 +4,14 @@
     <img id="logo" src="assets/slogo36px1.png" alt="Slogo" />
   </a>
 
+  <!-- Insert Links here -->
+
   <nav class="nav-items">
+    <!-- Menu Items -->
+    <div *ngFor="let item of menuItems">
+      <a [routerLink]="item.url">{{ item.name }}</a>
+    </div>
+
     <!-- Nav Theme Toggle Component -->
     <app-theme-toggle class="nav-theme-toggle"></app-theme-toggle>
 
@@ -12,6 +19,6 @@
     <app-social-links class="nav-social-links"></app-social-links>
   </nav>
 
-  <!-- Nav Ellipsis Component -->
+  <!-- Navdrop Menu -->
   <app-navdrop class="nav-menu"></app-navdrop>
 </header>

@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 export class NavdropComponent {
   isMenuOpen = false;
   menuItems = [
-    { name: 'Me', url: '/about' },
     { name: 'Projects', url: '/home' },
+    { name: 'Me', url: '/about' },
   ];
 
   toggleMenu() {

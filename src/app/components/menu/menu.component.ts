@@ -6,7 +6,6 @@ import {
   ElementRef,
   ViewChild,
 } from '@angular/core';
-import { EllipsisComponent } from '../ellipsis/ellipsis.component';
 
 @Component({
   selector: 'app-menu',
@@ -15,7 +14,6 @@ import { EllipsisComponent } from '../ellipsis/ellipsis.component';
 })
 export class MenuComponent {
   @Output() menuClosed = new EventEmitter<void>();
-  @ViewChild(EllipsisComponent) ellipsisComponent!: EllipsisComponent;
 
   isMenuOpen = false;
   menuItems = [
@@ -28,14 +26,5 @@ export class MenuComponent {
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
-  }
-
-  @HostListener('document:click', ['$event'])
-  clickout(event: Event) {
-    if (!this.eRef.nativeElement.contains(event.target)) {
-      this.isMenuOpen = false;
-      this.menuClosed.emit();
-      this.ellipsisComponent.resetEllipsis();
-    }
   }
 }

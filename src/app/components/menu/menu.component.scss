@@ -114,14 +114,6 @@
     transition: all 0.3s ease; // Transition for smoother appearance
     z-index: 3;
 
-    &.projects {
-      font-size: 36px; // Adjust the size as needed
-    }
-
-    &.profile {
-      font-size: 36px; // Adjust the size as needed
-    }
-
     > li {
       padding: 15px; // More padding for better readability
       display: flex;
@@ -145,6 +137,24 @@
         font-weight: 400; // Less bold font for a more professional look
         font-size: 16px; // Larger font size for better readability
       }
+    }
+  }
+
+  .projects {
+    font-size: 46px; // Desktop size
+
+    @media (max-width: 768px) {
+      // Adjust the breakpoint as needed
+      font-size: 16px; // Mobile size
+    }
+  }
+
+  .profile {
+    font-size: 24px; // Desktop size
+
+    @media (max-width: 768px) {
+      // Adjust the breakpoint as needed
+      font-size: 46px; // Mobile size
     }
   }
 }

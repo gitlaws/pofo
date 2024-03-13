@@ -9,7 +9,7 @@ export class NavdropComponent {
   isMenuOpen = false;
   menuItems = [
     { name: 'Projects', url: '/home' },
-    { name: 'Me', url: '/about' },
+    { name: 'Profile', url: '/about' },
   ];
 
   toggleMenu() {

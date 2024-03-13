@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   menuItems = [
     { name: 'Projects', url: '/home' },
-    { name: 'Me', url: '/about' },
+    { name: 'Profile', url: '/about' },
   ];
 
   ngOnInit(): void {

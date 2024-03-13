@@ -11,6 +11,7 @@ import { ThemeToggleModule } from '../shared/shared/theme-toggle.module';
 import { SocialLinksModule } from '../shared/shared/social-links.module';
 import { NavdropModule } from '../shared/shared/navdrop.module'; // Import NavdropModule
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { MenuLinksModule } from './components/menu-links/menu-links.module';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -20,17 +21,16 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     HeaderComponent,
     GridPanelComponent,
     MainSectionComponent,
-    // EllipsisComponent, // Remove EllipsisComponent from declarations
-    // Remove SocialLinksComponent from declarations
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ThemeToggleModule,
     SocialLinksModule,
-    NavdropModule, // Add NavdropModule to imports
+    NavdropModule,
+    MenuLinksModule,
   ],
-  exports: [NavdropModule],
+  exports: [NavdropModule, MenuLinksModule],
   providers: [],
   bootstrap: [AppComponent],
 })

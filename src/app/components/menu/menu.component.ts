@@ -16,11 +16,6 @@ export class MenuComponent {
   @Output() menuClosed = new EventEmitter<void>();
 
   isMenuOpen = false;
-  menuItems = [
-    { name: 'Item 1', url: '/item1', class: 'projects' },
-    { name: 'Item 2', url: '/item2', class: 'profile' },
-    // Add more items as needed
-  ];
 
   constructor(private eRef: ElementRef) {}
 

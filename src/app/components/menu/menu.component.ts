@@ -17,8 +17,8 @@ export class MenuComponent {
 
   isMenuOpen = false;
   menuItems = [
-    { name: 'Item 1', url: '/item1' },
-    { name: 'Item 2', url: '/item2' },
+    { name: 'Item 1', url: '/item1', class: 'proejcts' },
+    { name: 'Item 2', url: '/item2', class: 'profile' },
     // Add more items as needed
   ];
 

@@ -114,6 +114,14 @@
     transition: all 0.3s ease; // Transition for smoother appearance
     z-index: 3;
 
+    &.projects {
+      font-size: 36px; // Adjust the size as needed
+    }
+
+    &.profile {
+      font-size: 36px; // Adjust the size as needed
+    }
+
     > li {
       padding: 15px; // More padding for better readability
       display: flex;

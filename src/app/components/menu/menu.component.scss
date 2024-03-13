@@ -139,24 +139,6 @@
       }
     }
   }
-
-  .projects {
-    font-size: 46px; // Desktop size
-
-    @media (max-width: 768px) {
-      // Adjust the breakpoint as needed
-      font-size: 16px; // Mobile size
-    }
-  }
-
-  .profile {
-    font-size: 24px; // Desktop size
-
-    @media (max-width: 768px) {
-      // Adjust the breakpoint as needed
-      font-size: 46px; // Mobile size
-    }
-  }
 }
 
 #menu-button {
@@ -164,4 +146,22 @@
   border: none;
   box-shadow: none;
   color: transparent;
+}
+
+.projects .menu-item {
+  font-size: 46px; // Desktop size
+
+  @media (max-width: 768px) {
+    // Adjust the breakpoint as needed
+    font-size: 16px; // Mobile size
+  }
+}
+
+.profile .menu-item {
+  font-size: 24px; // Desktop size
+
+  @media (max-width: 768px) {
+    // Adjust the breakpoint as needed
+    font-size: 46px; // Mobile size
+  }
 }

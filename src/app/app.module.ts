@@ -26,7 +26,8 @@ import { CommonModule } from '@angular/common'; // Import CommonModule
     ProfileComponent,
   ],
   imports: [
-    CommonModule, // Replace BrowserModule with CommonModule
+    BrowserModule,
+    CommonModule,
     AppRoutingModule,
     ThemeToggleModule,
     SocialLinksModule,

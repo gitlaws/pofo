@@ -12,6 +12,7 @@ import { SocialLinksModule } from '../shared/shared/social-links.module';
 import { NavdropModule } from '../shared/shared/navdrop.module'; // Import NavdropModule
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MenuLinksModule } from './components/menu-links/menu-links.module';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -21,6 +22,7 @@ import { MenuLinksModule } from './components/menu-links/menu-links.module';
     HeaderComponent,
     GridPanelComponent,
     MainSectionComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

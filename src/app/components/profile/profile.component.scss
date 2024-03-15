@@ -3,55 +3,43 @@
 
 .profile-container {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   height: 100vh;
   font-family: "Roboto", sans-serif;
 
-  .profile-aside {
+  .profile-aside.left,
+  .profile-main {
+    width: 37.5%; // 75% divided by 2
+    padding: 1em;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .profile-aside.right {
     width: 25%;
     padding: 1em;
     overflow-y: auto;
-    background: #f8f9fa;
-
-    img {
-      width: 100%;
-    }
-
-    h3 {
-      color: #343a40;
-    }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-
-      li {
-        margin-bottom: 0.5em;
-      }
-    }
   }
 
-  .profile-main {
-    width: 50%;
-    padding: 1em;
-    overflow-y: auto;
-    background: #fff;
-
-    h1,
-    h2 {
-      color: #343a40;
+  @media (max-width: 768px) {
+    // typical breakpoint for tablets
+    .profile-aside.left,
+    .profile-main {
+      width: 75%; // combine left and main columns
     }
 
-    p {
-      color: #6c757d;
+    .profile-aside.right {
+      width: 25%; // keep right column separate
     }
   }
 
   @media (max-width: 600px) {
-    flex-direction: column;
-
-    .profile-aside,
-    .profile-main {
+    .profile-aside.left,
+    .profile-main,
+    .profile-aside.right {
       width: 100%;
     }
   }

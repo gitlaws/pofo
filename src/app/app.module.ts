@@ -13,6 +13,7 @@ import { NavdropModule } from '../shared/shared/navdrop.module'; // Import Navdr
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MenuLinksModule } from './components/menu-links/menu-links.module';
 import { ProfileComponent } from './components/profile/profile.component';
+import { CommonModule } from '@angular/common'; // Import CommonModule
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -25,7 +26,7 @@ import { ProfileComponent } from './components/profile/profile.component';
     ProfileComponent,
   ],
   imports: [
-    BrowserModule,
+    CommonModule, // Replace BrowserModule with CommonModule
     AppRoutingModule,
     ThemeToggleModule,
     SocialLinksModule,
